@@ -1,10 +1,6 @@
 import $ from 'jquery'
 import { swiper, swiperSlide} from 'vue-awesome-swiper'
-
-export default {
-	name: 'wkIndex',
-	data(){
-		return {
+var vmData = {
 			indexObj1:[],
 			recPro:[],
 			recCompany:[],
@@ -29,7 +25,11 @@ export default {
 	      				this.index=swiper.realIndex;
 	      			}
 	      	}
-		}
+		};
+export default {
+	name: 'wkIndex',
+	data(){
+		return vmData
 		
 	},
 	created:function(){
@@ -130,7 +130,7 @@ export default {
 				if(response.status==1){
 					if(response.pages==self.companyPage){
 							self.isPageEnd2 = true;
-						}
+					}
 					response.result.map(function(item,index){
 						self.recCompany.push(item);
 					});/*

@@ -12,7 +12,7 @@ ul, li{
 }
 .swiper-pagination-bullet{
 	background: none;
-	border:2px solid #fff;
+	border:1px solid #fff;
 	opacity: 1;
 	width: 6px;
 	height: 6px;
@@ -42,12 +42,15 @@ header{
 	box-sizing: border-box;
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: 50%;
 	z-index: 666;
 	width: 100%;
 	max-width: 640px;
 	min-width:320px;
 	box-sizing: border-box;
+	-webkit-transform: translate(-50%,0);  
+      -ms-transform: translate(-50%,0);  
+          transform: translate(-50%,0);
 }
 .search-wrap{
 	padding:  0 10px;
@@ -413,10 +416,13 @@ footer{
 	max-width: 640px;
 	min-width: 320px;
 	bottom: 0;
-	left: 0;
+	left: 50%;
 	background: #fff;
 	z-index: 666;
 	border-top: 1px solid #e0e0e0;
+	-webkit-transform: translate(-50%,0);  
+      -ms-transform: translate(-50%,0);  
+          transform: translate(-50%,0);
 }
 .foot-menu-item{
 	float: left;
