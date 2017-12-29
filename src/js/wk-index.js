@@ -135,20 +135,29 @@ export default {
 						self.recCompany.push(item);
 					});/*
 					self.recCompany=response.result;*/
-					console.log("加载后的企业：",self.recCompany);
+					console.log("下拉加载加载后的企业：",self.recCompany);
 				}else{
 					console.log("请求出错！")
 				}
 		},
 		recToggle(msg){//推荐切换
 			var self=this;
+			switch(msg){
+				case 'product':
+					self.isCom=false;
+					break;
+				case 'company':
+					self.isCom=true;
+					break;
+				default: alert("参数错误！");
+			}/*
 			if(msg=='product'){
 				self.isCom=false;
 			}else if(msg=='company'){
 				self.isCom=true;
 			}else{
 				alert("参数错误！")
-			}
+			}*/
 		}
 	}
 }
