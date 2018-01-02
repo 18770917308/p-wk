@@ -58,7 +58,7 @@ export default {
     			};
     			//监听滚动
     			window.addEventListener('scroll',function(){
-    				var scrollTop = document.documentElement.scrollTop,
+    				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop,
     					innerHeight = window.innerHeight,
     					offsetHeight = document.body.offsetHeight;
     					/*console.log('scrollTop',scrollTop);

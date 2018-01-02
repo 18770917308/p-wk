@@ -49,7 +49,7 @@
 			</ul>
 			<!--分类-->
 			<div class="our-major">
-				<ul class="major-block-1 clearfix">
+				<ul class="major-block-1">
 					<li class="major-1 major-item-1">
 						<a href="#">
 							<p>OEM/ODM</p>
@@ -76,7 +76,7 @@
 						</ul>
 					</li>
 				</ul>
-				<ul class="major-block-3 clearfix">
+				<ul class="major-block-3">
 					<li class="major major-4">
 						<a href="#">
 							<div class="major-title">美容/仪器</div>
@@ -91,7 +91,7 @@
 					</li>
 				</ul>
 			</div>
-			<ul class="supply-wrap clearfix">
+			<ul class="supply-wrap">
 				<li class="supply-1">
 					<a href="#">
 						<p class="supply-title">热门供应</p>
