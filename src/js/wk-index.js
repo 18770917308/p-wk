@@ -9,6 +9,7 @@ var vmData = {
 			companyPage:1,//初始页码1 企业
 			isPageEnd1:false,//产品是否加载到最后一页
 			isPageEnd2:false,//企业是否加载到最后一页
+			isLoadingMore:false,//
 			swiperOption: {
 	      			loop:true,
 	      			autoplay:2000,
@@ -17,7 +18,7 @@ var vmData = {
 	      			grabCursor: true,
 			        autoplayDisableOnInteraction : false,
 			        pagination : '.swiper-pagination',
-			        paginationClickable :true,
+			        paginationClickableickable :true,
 			        observeParents:true,
 	      			onSlideChangeEnd: swiper =>{
 	      				//swiper的回调方法
@@ -47,7 +48,7 @@ export default {
 		}
 	},
 	mounted () {  
-    			var that = this;
+	    		var that = this;
     			if(that.swiperOption){
     				this.swiper.slideTo(0, 0, true);
     			//
@@ -59,15 +60,17 @@ export default {
     			//监听滚动
     			window.addEventListener('scroll',function(){
     				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop,
-    					innerHeight = window.innerHeight,
-    					offsetHeight = document.body.offsetHeight;
+    					innerHeight = document.body.clientHeight,
+    					offsetHeight = document.body.scrollHeight;
     					/*console.log('scrollTop',scrollTop);
     					console.log('innerHeight',window.screen.height);
     					console.log('offsetHeight',offsetHeight);
     					console.log('屏幕分辨率的高：',window.screen.height)*/
+    					that.isLoadingMore=true;
     				if(scrollTop + innerHeight >= offsetHeight) {
     					if(that.isCom && !that.isPageEnd2){
     						that.companyPage=that.companyPage+1;
+    						console.log('请求的下一页:',that.companyPage);
     						that.recComp();
     					}else if(!that.isCom && !that.isPageEnd1){
     						that.productPage= that.productPage+1;
@@ -111,6 +114,7 @@ export default {
 					console.log('推荐产品：',response);
 					if(response.status==1){
 						if(response.pages==self.productPage){
+							self.isLoadingMore=false;
 							self.isPageEnd1 = true;
 						}
 						for(var item in response.result){
@@ -130,6 +134,7 @@ export default {
 				if(response.status==1){
 					if(response.pages==self.companyPage){
 							self.isPageEnd2 = true;
+							self.isLoadingMore=false;
 					}
 					response.result.map(function(item,index){
 						self.recCompany.push(item);
@@ -141,6 +146,7 @@ export default {
 				}
 		},
 		recToggle(msg){//推荐切换
+			console.log($("#datePick").val())
 			var self=this;
 			switch(msg){
 				case 'product':

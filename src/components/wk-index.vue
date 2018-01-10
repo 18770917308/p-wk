@@ -62,10 +62,10 @@
 					<li class="major-item-1">
 						<ul class="major-block-2">
 							<li class="major major-2">
-								<a href="#">
+								<router-link to="/hello">
 									<div class="major-title">包材/辅材</div>
 									<div class="major-img"><img src="../assets/image/img-prod1.png" alt=""></div>
-								</a>
+								</router-link>
 							</li>
 							<li class="major major-3">
 								<a href="#">
@@ -145,7 +145,7 @@
 								<p class="rec-con-title ellipsis">{{item.companyname}}</p>
 								<p class="rec-con-addr ellipsis">{{item.areaname}}</p>
 								<span class="rec-con-sign company-ver">企业认证</span>
-								<p class="rec-con-main rec-con-major">{{item.catname}}</p>
+								<p class="rec-con-main rec-con-major">主营：{{item.catname}}</p>
 							</div>
 						</a>
 					</li>
@@ -158,6 +158,7 @@
 					<li class="line-right"></li>
 				</ul>
 			</div>
+			<div class="loading" v-if='isLoadingMore && !isPageEnd2 && isCom || isLoadingMore && !isPageEnd1 && !isCom'>Loading...</div>
 		</div>
 		<footer>
 			<ul class="foot-menu clearfix">

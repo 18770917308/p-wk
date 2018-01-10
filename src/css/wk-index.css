@@ -9,6 +9,7 @@ ul, li{
 .wrapper{
 	background: #f3f3f3;
 	padding:42px 0 100px 0;
+	font-size: 0;
 }
 .swiper-pagination-bullet{
 	background: none;
@@ -34,6 +35,7 @@ ul, li{
 	text-overflow:ellipsis;
 	white-space: nowrap;
 }
+.loading{padding: 8px 0;font-size: 12px;}
 /*头部搜索*/
 header{
 	padding: 5px 45px;
@@ -245,7 +247,6 @@ header{
 	width: 50%;
 	border-right: 1px solid #e0e0e0;
 	padding: 20px 33px 20px 10px;
-	margin-right: -3px;
 }
 .supply-2,.supply-3{
 	width: 25%;
@@ -331,7 +332,7 @@ header{
 .rec-wrap{
 	background: #fff;
 }
-.rec-tog{border-bottom: 1px solid #e0e0e0;}
+.rec-tog{border-bottom: 1px solid #e0e0e0;font-size: 0;}
 .rec-tog-btn{
 	display: inline-block;
 	margin: -3px;
