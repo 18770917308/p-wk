@@ -144,8 +144,20 @@
 							<div class="rec-con">
 								<p class="rec-con-title ellipsis">{{item.companyname}}</p>
 								<p class="rec-con-addr ellipsis">{{item.areaname}}</p>
-								<span class="rec-con-sign company-ver">企业认证</span>
+								<!-- <span class="rec-con-sign company-ver">企业认证</span> -->
 								<p class="rec-con-main rec-con-major">主营：{{item.catname}}</p>
+								<div class="com-wrap">
+									<span class="com-type com-type1" v-if="item.pattern==1">品牌商</span>
+									<span class="com-type com-type2" v-if="item.pattern==2">服务商</span>
+									<span class="com-type com-type3" v-if="item.pattern==3">制造商</span>
+									<span class="com-level com-level1" v-if="item.mfrs_level==1">认证厂家</span>
+									<span class="com-level com-level2" v-if="item.mfrs_level==2">优质厂家</span>
+									<span class="com-level com-level3" v-if="item.mfrs_level==3">实力厂家</span>
+								</div>
+								<div class="cert-status" v-if="item.cert_status==1">
+									<span class="cert-status1">企业认证</span>
+									<span class="cert-status2">实地验厂</span>
+								</div>
 							</div>
 						</a>
 					</li>
