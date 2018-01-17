@@ -1,0 +1,97 @@
+@primaryColor:#fccf00;
+@borderColor:#d2d2d2;
+
+@maxWidth:640px;
+@minWidth:320px;
+@themeColor:#fccf00;
+
+/*reset*/
+
+/**1-15**/
+
+input,button{
+	outline:none;
+	vertical-align:middle;
+
+}
+a:hover,a:active,a:link{
+	text-decoration:none;
+}
+/*清除浮动*/
+.clearfix::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+.le-icon{
+    display:inline-block;
+    background-repeat:no-repeat;
+    vertical-align:middle;
+    background-position:center center;
+    background-size:contain;
+}
+
+
+.fl{
+	float:left !important;
+}
+.fr{
+	float:right !important;
+}
+.one-line{
+    display:inline-block;        /*内联对象需加*/
+    word-break:keep-all;         /* 不换行 */
+    white-space:nowrap;          /* 不换行 */
+    overflow:hidden;             /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;      /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+.gray{
+    color:#666 ;
+}
+.light-gray{
+    color:#999;
+}
+.red{
+    color:#f00;
+}
+
+/**1-15**/
+img{
+	display:block;
+}
+
+h1,h2,h3,h4,h5,h6,div,a,ul,ol,li,img,span,table,tr,th,td,tbody,button,input,select,section,dl, dt, dd,html,body{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+
+/*
+div,span{
+	line-height:1.0;
+}*/
+
+.icon-back{
+    width:12px;
+    height:20px;
+    background-image: url('~assets/icon/back.png');
+    background-size:12px 20px;
+
+}
+.icon-hot{
+    width:20px;
+    height:20px;
+     background-image: url('~assets/icon/hot.png');
+      background-size: 20px;
+}
+
+.icon-more{
+    width:11px;
+    height:18px;
+    background-image:url('~assets/icon/more.png');
+    background-size:11px 18px;
+}

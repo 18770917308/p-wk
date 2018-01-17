@@ -1,0 +1,99 @@
+.kinds-wrap{
+	padding: 42px 0;
+	background: #f3f3f3;
+}
+.to-back{
+	display: block;
+	width: 26px;
+	height: 28px;
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	margin: -14px 0;
+	background:url('../assets/image/icon-back.png') center no-repeat;
+	background-size: 11px;
+}
+.kinds-con{
+	border-top: 1px solid #d2d2d2;
+	position: relative;
+}
+.kinds{
+	position: fixed;
+	width: 28%;
+	height: 100%;
+	z-index: 44;
+	top: 42px;
+	background: #fff;
+	font-size: 14px;
+	color: #666;
+	max-width: 180px;
+}
+.kinds li{
+	text-align: center;
+	padding: 15px 0;
+}
+.kinds-li.active{
+	background: #f2f2f2;
+	color: #333;
+}
+.kinds-child{
+	margin-left: 28%;
+	width: 72%;
+	background: #f3f3f3;
+}
+.kind-name{
+	font-size: 14px;
+	color: #333;
+	padding:15px 0 15px 20px;
+	margin: 0;
+	position: relative;
+	text-align: left;
+}
+.kind-name::before{
+	content: '';
+	width: 4px;
+	height: 16px;
+	background: #333;
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	margin: -8px 0;
+}
+.kinds-child-ul{
+	padding: 0 2px;
+	box-sizing: border-box;
+}
+.kinds-child-li{
+	float: left;
+	width: 33.33%;
+	height: 114px;
+	padding: 0 2px 4px 2px;
+	box-sizing: border-box;
+	background: #f2f2f2;
+}
+.kinds-child-li a{
+	position: relative;
+	display: block;
+	background: #fff;
+	font-size: 12px;
+	color: #666;
+	padding: 3px 0;
+	line-height: 20px;
+	height: 110px;
+	box-sizing: border-box;
+}
+.kinds-img{
+	display: block;
+	overflow: hidden;
+}
+.kinds-img img{
+	max-width: 70px;
+	max-height: 84px;
+}
+.k-name{
+	display: block;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}

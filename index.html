@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimun-scale=1.0,user-scalable=no">
-    <title>微库商城</title>
+    <meta name="description" content="化妆品批发，化妆品厂家，化妆品招商，化妆品加工，化妆品包装，化妆品包材，化妆品设计，美容仪器，日化用品，日化用品批发，美博会，美妆网，微库工厂">
+    <meta name="keywords" content="微库工厂是国内化妆品、日化用品企业采购供应加工产品、找包材广告设计及网络推广首选的B2B电子商务平台，平台整合了OEM/ODM、包材/辅材、美容仪器、设计/版权、营销/推广等优质资源，并配备安全可靠的软硬件服务和专业的运营团队，为广大美妆企业提供专业、高效的化妆品、日化用品采购供应加工服务。">
+    <title>微库工厂</title>
     <style type="text/css">
 		body,html{min-width: 320px;max-width: 640px;margin:0 auto;height: 100%;}
     </style>
@@ -11,5 +13,61 @@
   <body>
     <div id="app">
     </div>
+    <!--flexible -->
+    <script>
+      function flexible (window, document) {
+      var docEl = document.documentElement
+      var dpr = window.devicePixelRatio || 1
+
+      // adjust body font size
+      function setBodyFontSize () {
+        if (document.body) {
+          document.body.style.fontSize = (14 * dpr) + 'px'
+        }
+        else {
+          document.addEventListener('DOMContentLoaded', setBodyFontSize)
+        }
+      }
+      //tBodyFontSize();
+
+      // set 1rem = viewWidth / 10
+      function setRemUnit () {
+        var cliWidth = docEl.clientWidth;
+        if(cliWidth < 320) cliWidth = 320;
+        if(cliWidth > 640) cliWidth = 640;
+        var rem =  cliWidth/ 10;
+        docEl.style.fontSize = rem + 'px'
+      }
+
+      setRemUnit()
+
+      // reset rem unit on page resize
+      window.addEventListener('resize', setRemUnit)
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) {
+          setRemUnit()
+        }
+      })
+
+      // detect 0.5px supports
+      if (dpr >= 2) {
+        var fakeBody = document.createElement('body')
+        var testElement = document.createElement('div')
+        testElement.style.border = '.5px solid transparent'
+        fakeBody.appendChild(testElement)
+        docEl.appendChild(fakeBody)
+        if (testElement.offsetHeight === 1) {
+          docEl.classList.add('hairlines')
+        }
+        docEl.removeChild(fakeBody)
+      }
+    }
+    flexible(window,document);
+    window.addEventListener('resize',function(e){
+      
+      flexible(window,document);
+    })
+    </script>
+
   </body>
 </html>

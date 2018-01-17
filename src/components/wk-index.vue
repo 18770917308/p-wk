@@ -2,10 +2,10 @@
 	<div class="wk-index">
 		<div class="wrapper">
 			<!--头部-->
-			<header>
+			<header class="header">
 				<div class="search-wrap">
 					<i class="search-icon"></i>
-					<input type="text" class="search-input" placeholder="搜索产品/供应商">
+					<input type="text" class="search-input" placeholder="搜索产品/供应商" @click="goSearch()">
 				</div>
 				<a class="scan-icon" href="javascipt:void(0)"></a>
 				<a class="inf-icon" href="javascipt:void(0)"></a>
@@ -23,16 +23,16 @@
 			</div>
 			<ul class="product-kinds clearfix">
 				<li class="kinds-item">
-					<a href="#" class="kinds-link">
+					<router-link to="/category" class="kinds-link">
 						<i><img src="../assets/image/icon-allkinds.png" alt=""></i>
 						<p>全部分类</p>
-					</a>
+					</router-link>
 				</li>
 				<li class="kinds-item">
-					<a href="#" class="kinds-link">
+					<router-link to="/newProduct" class="kinds-link">
 						<i><img src="../assets/image/icon-cart.png" alt=""></i>
 						<p>新品上架</p>
-					</a>
+					</router-link>
 				</li>
 				<li class="kinds-item">
 					<a href="#" class="kinds-link">
@@ -93,31 +93,31 @@
 			</div>
 			<ul class="supply-wrap">
 				<li class="supply-1">
-					<a href="#">
+					<router-link to="hotsupply">
 						<p class="supply-title">热门供应</p>
 						<span class="supply-con">爆款产品 市场热销</span>
 						<div class="supply-img"><img src="../assets/image/img-prod6.png" alt=""></div>
-					</a>
+					</router-link>
 				</li>
 				<li class="supply-2">
-					<a href="#">
+					<router-link to="/samplecenter">
 						<p class="supply-title">样品中心</p>
 						<span class="supply-con">样品免费拿</span>
 						<div class="supply-img"><img src="../assets/image/icon-exam.png" alt=""></div>
-					</a>
+					</router-link>
 				</li>
 				<li class="supply-3">
-					<a href="#">
+					<router-link to="excellentCom">
 						<p class="supply-title">优质企业</p>
 						<span class="supply-con">服务有保障</span>
 						<div class="supply-img"><img src="../assets/image/icon-company.png" alt=""></div>
-					</a>
+					</router-link>
 				</li>
 			</ul>
 			<!--推荐-->
 			<div class="rec-title clearfix">
 				<span class="rec-left">为您推荐</span>
-				<a href="#" class="rec-right">关注的品类 >></a>
+				<!-- <a href="#" class="rec-right">关注的品类 >></a> -->
 			</div>
 			<div class="rec-wrap">
 				<div class="rec-tog">
@@ -127,23 +127,23 @@
 				<ul class="rec-item-list" v-if="!isCom" v-for="item in recPro">
 					<li class="rec-item">
 						<a href="" class="clearfix">
-							<i class="rec-img"><img v-bind:src="item.thumb" alt=""></i>
+							<i class="rec-img"><img v-lazy="item.thumb" alt=""></i>
 							<div class="rec-con">
-								<p class="rec-con-title ellipsis">{{item.title}}</p>
-								<p class="rec-con-addr ellipsis">{{item.areaname}}</p>
+								<p class="rec-con-title ellipsis" v-text="item.title"></p>
+								<p class="rec-con-addr ellipsis" v-text="item.areaname"></p>
 								<span class="rec-con-sign prod-exam">免费取样</span>
-								<p class="rec-con-main rec-con-price">{{item.price}}</p>
+								<p class="rec-con-main rec-con-price" v-text="item.price"></p>
 							</div>
 						</a>
 					</li>
 				</ul>
-				<ul class="rec-item-list" v-if="isCom" v-for="item in recCompany">
-					<li class="rec-item">
+				<ul class="rec-item-list" v-if="isCom">
+					<li class="rec-item" v-for="item in recCompany">
 						<a href="" class="clearfix">
-							<i class="rec-img"><img v-bind:src="item.logo" alt=""></i>
+							<i class="rec-img"><img v-lazy="item.logo" alt=""></i>
 							<div class="rec-con">
-								<p class="rec-con-title ellipsis">{{item.companyname}}</p>
-								<p class="rec-con-addr ellipsis">{{item.areaname}}</p>
+								<p class="rec-con-title ellipsis" v-text="item.companyname"></p>
+								<p class="rec-con-addr ellipsis" v-text="item.areaname"></p>
 								<!-- <span class="rec-con-sign company-ver">企业认证</span> -->
 								<p class="rec-con-main rec-con-major">主营：{{item.catname}}</p>
 								<div class="com-wrap">
@@ -163,13 +163,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="rec-tips-wrap" v-if='isPageEnd2 && isCom || isPageEnd1 && !isCom'>
-				<ul class="rec-tips clearfix">
-					<li class="line-left"></li>
-					<li class="tips-con">暂无更多推荐</li>
-					<li class="line-right"></li>
-				</ul>
-			</div>
+			<is-end v-if='isPageEnd2 && isCom || isPageEnd1 && !isCom' v-bind:msg="msg"></is-end>
 			<div class="loading" v-if='isLoadingMore && !isPageEnd2 && isCom || isLoadingMore && !isPageEnd1 && !isCom'>Loading...</div>
 		</div>
 		<footer>

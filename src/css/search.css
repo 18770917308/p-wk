@@ -1,0 +1,101 @@
+.search-header{
+	border-bottom: 1px solid #d2d2d2;
+	padding: 5px 45px;
+}
+.go-search{
+	font-size: 15px;
+	color: #333;
+	display: block;
+	width: 50px;
+	height: 28px;
+	line-height: 28px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin: -14px 0;
+}
+.search-type{
+	background: #fff;
+	margin: 42px 0 0;
+	padding-top: 4px;
+}
+.search-type a{
+	float: left;
+	width: 50%;
+	font-size: 14px;
+	color: #666;
+	padding: 14px 0;
+	position: relative;
+	text-align: center;
+}
+.search-type .active{
+	color: #333;
+}
+.search-type .active::before{
+	content: '';
+	display: block;
+	width: 84px;
+	height: 2px;
+	background: #000;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin: 0 -42px;
+}
+.hot-search{
+	margin-top: 10px;
+	padding:0 10px;
+	background: #fff;
+}
+.hot-title{
+	font-size: 15px;
+	color: #333;
+	padding: 15px 0;
+	margin: 0;
+	text-align: left;
+}
+.hot-list{
+	padding-bottom: 35px;
+}
+.hot-item{
+	float: left;
+	margin:0 15px 15px 0;
+}
+.hot-item a{
+	display: block;
+	padding: 5px 7px;
+	background: #f0f0f0;
+	font-size: 14px;
+	color: #666;
+}
+.history-search{
+	margin-top: 10px;
+	background: #fff;
+}
+.history-top{
+	padding:16px 10px;
+	position: relative;
+	text-align: left;
+	font-size: 15px;
+	color: #333;
+	margin: 0;
+}
+.delete-history{
+	display: block;
+	width: 30px;
+	height: 40px;
+	background: url('../assets/image/icon-delete.png') center no-repeat;
+	background-size: 16px;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin: -20px 0;
+}
+.hitory-item{
+	display: block;
+	border-top: 1px solid #d2d2d2;
+	padding: 13px 25px;
+	font-size: 15px;
+	color: #666;
+	text-align: left;
+}

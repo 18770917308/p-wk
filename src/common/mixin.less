@@ -1,0 +1,79 @@
+//rem转换
+@base-length:75rem;
+
+.height-rem(@height){
+	height:(@height/@base-length);
+}
+.width-rem(@width){
+	width:(@width/@base-length);
+}
+.border-rem(@width,@type,@color){
+	border:(@width/@base-length) @type @color;
+}
+
+.border-rem(left,@width,@type,@color){
+	border-left:(@width/@base-length) @type @color;
+}
+.border-rem(right,@width,@type,@color){
+	border-right:(@width/@base-length) @type @color;
+}
+.border-rem(top,@width,@type,@color){
+	border-top:(@width/@base-length) @type @color;
+}
+.border-rem(bottom,@width,@type,@color){
+	border-bottom:(@width/@base-length) @type @color;
+}
+
+//字体
+.font-size-rem(@fontsize){
+	font-size:@fontsize/@base-length;
+
+}
+
+//margin
+.margin-rem(@l){
+	margin:@l/@base-length;
+}
+.margin-rem(left,@l){
+	margin-left:@l/@base-length;
+}
+.margin-rem(right,@l){
+	margin-right:@l/@base-length;
+}
+.margin-rem(top,@l){
+	margin-top:@l/@base-length;
+}
+.margin-rem(bottom,@l){
+	margin-bottom:@l/@base-length;
+}
+
+//padding
+.padding-rem(@l){
+	padding:@l/@base-length;
+}
+.padding-rem(left,@l){
+	padding-left:@l/@base-length;
+}
+.padding-rem(right,@l){
+	padding-right:@l/@base-length;
+}
+.padding-rem(top,@l){
+	padding-top:@l/@base-length;
+}
+.padding-rem(bottom,@l){
+	padding-bottom:@l/@base-length;
+}
+
+//position
+.left-rem(@l){
+	left:@l/@base-length;
+}
+.top-rem(@l){
+	top:@l/@base-length;
+}
+
+
+//line-height
+.line-height-rem(@l){
+	line-height:@l/@base-length;
+}

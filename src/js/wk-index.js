@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import { swiper, swiperSlide} from 'vue-awesome-swiper'
+import isEnd from '@/components/common/isEnd'
 var vmData = {
 			indexObj1:[],
 			recPro:[],
@@ -10,6 +11,7 @@ var vmData = {
 			isPageEnd1:false,//产品是否加载到最后一页
 			isPageEnd2:false,//企业是否加载到最后一页
 			isLoadingMore:false,//
+			msg:"暂无更多推荐",
 			swiperOption: {
 	      			loop:true,
 	      			autoplay:2000,
@@ -41,6 +43,7 @@ export default {
 	components: {
 		swiper,
 		swiperSlide,
+		isEnd
 	},
 	computed: {
 		swiper() {
@@ -58,60 +61,59 @@ export default {
     			},2500)
     			};
     			//监听滚动
-    			window.addEventListener('scroll',function(){
-    				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop,
+    			window.addEventListener('scroll',that.wScroll);
+  			},
+	methods:{
+		ajaxCommon(url,datas){//ajax通用
+			var baseUrl = this.baseUrl;
+			return $.ajax({
+				type:'POST',
+					url:baseUrl+url,
+					async: false,
+					dataType:'json',
+					data:datas||'',
+					success:function(response){
+						//console.log(response);
+					},
+					error:function(){
+						//console.log("获取数据失败");
+					}
+				})
+			},
+		wScroll(){
+			var that = this,
+				scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop,
     					innerHeight = document.body.clientHeight,
     					offsetHeight = document.body.scrollHeight;
-    					/*console.log('scrollTop',scrollTop);
-    					console.log('innerHeight',window.screen.height);
-    					console.log('offsetHeight',offsetHeight);
-    					console.log('屏幕分辨率的高：',window.screen.height)*/
     					that.isLoadingMore=true;
     				if(scrollTop + innerHeight >= offsetHeight) {
     					if(that.isCom && !that.isPageEnd2){
     						that.companyPage=that.companyPage+1;
-    						console.log('请求的下一页:',that.companyPage);
+    						//console.log('请求的下一页:',that.companyPage);
     						that.recComp();
     					}else if(!that.isCom && !that.isPageEnd1){
     						that.productPage= that.productPage+1;
     						that.recProd();
     					}
     				}
-    			})
-  			},
-	methods:{
-		ajaxCommon(url,datas){//ajax通用
-			return $.ajax({
-				type:'POST',
-					url:url,
-					async: false,
-					dataType:'json',
-					data:datas||'',
-					success:function(response){
-						console.log(response);
-					},
-					error:function(){
-						console.log("获取数据失败");
-					}
-				})
-			},
+		},
 		getAdv(){//请求 banner
 				var self=this,
-					url = 'http://123.207.109.224:8066/Buyer/v2/index/index/',
+					url = 'Buyer/v2/index/index/',
 					response=self.ajaxCommon(url).responseJSON;
-					console.log('广告：',response);
+					//console.log('广告：',response);
 					if(response.status==1){
 						self.indexObj1=response.result;
 					}else{
-						console.log("请求出错！")
+						//console.log("请求出错！")
 					}
 			},
 		recProd(){//请求推荐产品
 				var self=this,
-					url = 'http://123.207.109.224:8066/Buyer/v2/index/recommend/',
+					url = 'Buyer/v2/index/recommend/',
 					data={page:self.productPage},
 					response=self.ajaxCommon(url,data).responseJSON;
-					console.log('推荐产品：',response);
+					//console.log('推荐产品：',response);
 					if(response.status==1){
 						if(response.pages==self.productPage){
 							self.isLoadingMore=false;
@@ -122,15 +124,15 @@ export default {
 						}
 						self.recPro=response.result;
 					}else{
-						console.log("请求出错！")
+						//console.log("请求出错！")
 					}
 		},
 		recComp(){//请求推荐企业
 			var self=this,
-				url = 'http://123.207.109.224:8066/Buyer/v2/index/factory/',
+				url = 'Buyer/v2/index/factory/',
 				data={page:self.companyPage},
 				response=self.ajaxCommon(url,data).responseJSON;
-					console.log('推荐企业：',response);
+					//console.log('推荐企业：',response);
 				if(response.status==1){
 					if(response.pages==self.companyPage){
 							self.isPageEnd2 = true;
@@ -140,13 +142,12 @@ export default {
 						self.recCompany.push(item);
 					});/*
 					self.recCompany=response.result;*/
-					console.log("下拉加载加载后的企业：",self.recCompany);
+					//console.log("下拉加载加载后的企业：",self.recCompany);
 				}else{
-					console.log("请求出错！")
+					//console.log("请求出错！")
 				}
 		},
 		recToggle(msg){//推荐切换
-			console.log($("#datePick").val())
 			var self=this;
 			switch(msg){
 				case 'product':
@@ -156,14 +157,10 @@ export default {
 					self.isCom=true;
 					break;
 				default: alert("参数错误！");
-			}/*
-			if(msg=='product'){
-				self.isCom=false;
-			}else if(msg=='company'){
-				self.isCom=true;
-			}else{
-				alert("参数错误！")
-			}*/
+			}
+		},
+		goSearch(){//跳转至搜索
+			this.$router.push({path:'/search'});
 		}
 	}
 }

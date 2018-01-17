@@ -1,11 +1,13 @@
 @import url(normalize.css);
 html{font: 10px/1 "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu}
 a{color: #666;text-decoration: none;}
+body{background: #f3f3f3;}
 ul, li{
 	margin: 0;
     padding: 0;
     list-style-type: none;
 }
+body{background: #f3f3f3;}
 .wrapper{
 	background: #f3f3f3;
 	padding:42px 0 100px 0;
@@ -38,7 +40,6 @@ ul, li{
 .loading{padding: 8px 0;font-size: 12px;}
 /*头部搜索*/
 header{
-	padding: 5px 45px;
 	position: relative;
 	background: #fccf00;
 	box-sizing: border-box;
@@ -53,6 +54,9 @@ header{
 	-webkit-transform: translate(-50%,0);  
       -ms-transform: translate(-50%,0);  
           transform: translate(-50%,0);
+}
+.header{
+	padding: 5px 45px;
 }
 .search-wrap{
 	padding:  0 10px;
@@ -364,8 +368,11 @@ header{
 	padding-right: 15px;
 	box-sizing: border-box;
 	min-height: 140px;
+	overflow: hidden;
+	max-width: 185px;
+	max-height: 185px;
 }
-.rec-img img{width: 100%;}
+.rec-img img{max-width: 100%;}
 .rec-con{
 	float: left;
 	width: 66.6%;
@@ -567,28 +574,6 @@ header{
 .rec-con-major{
 	color: #999;
 }
-
-.rec-tips-wrap{
-	padding: 10px 60px;
-	box-sizing: border-box;
-}
-.rec-tips li{
-	float: left;
-}
-.tips-con{
-	width: 26%;
-	color: #ccc;
-	font-size: 12px;
-	text-align: center;
-	padding:0 5px;
-	box-sizing: border-box;
-}
-.line-left,.line-right{
-	width: 37%;
-	border-bottom:1px solid #ccc;
-	position: relative;
-	top: 5px;
-}
 footer{
 	position: fixed;
 	width: 100%;
@@ -637,23 +622,4 @@ footer{
 		position: relative;
 	}
 
-}
-@media screen and (max-width: 436px){
-.rec-con-main{
-	margin: 10px 0 0 0;
-}
-	.tips-con{
-	width: 44%;
-	color: #ccc;
-	font-size: 12px;
-	text-align: center;
-	padding:0 5px;
-	box-sizing: border-box;
-}
-.line-left,.line-right{
-	width: 28%;
-	border-bottom:1px solid #ccc;
-	position: relative;
-	top: 5px;
-}
 }
