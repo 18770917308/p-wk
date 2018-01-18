@@ -7,10 +7,12 @@ import vueLazyLoad from 'vue-lazyload'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import './css/normalize.css'
+import './css/base.css'
 import './css/wk-index.css'
 import './css/category.css'
 import './css/samplecenter.css'
 import './css/search.css'
+import './css/productList.css'
 import loading from 'assets/icon/img-loading.gif'
 Vue.use(vueLazyLoad,{
 	preLoad:1.3,

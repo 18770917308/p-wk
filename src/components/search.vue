@@ -16,7 +16,7 @@
 		<div class="hot-search" v-if="isProduct">
 			<p class="hot-title">热搜产品</p>
 			<ul class="hot-list clearfix">
-				<li class="hot-item" v-for="item in hotKeyProduct"><a href="#" v-text="item"></a></li>
+				<li class="hot-item" v-for="item in hotKeyProduct"><router-link :to="{name:'productList',params:{keyword:item}}" v-text="item"></router-link></li>
 			</ul>
 		</div>
 		<div class="hot-search" v-if="!isProduct">
@@ -32,7 +32,9 @@
 				<span class="delete-history" @click="beforeDelete()"></span>
 			</p>
 			<ul class="hitory-list">
-				<li v-if="isProduct" v-for="item in historyProduct"><a class="hitory-item" href="#" v-text="item"></a></li>
+				<li v-if="isProduct" v-for="item in historyProduct">
+				<router-link  class="hitory-item" :to="{name:'productList',params:{keyword:item}}" v-text="item"></router-link >
+				</li>
 				<li v-if="!isProduct" v-for="item in historyCom"><a class="hitory-item" href="#" v-text="item"></a></li>
 			</ul>
 		</div>

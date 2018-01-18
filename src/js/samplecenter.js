@@ -46,10 +46,10 @@ export default{
 					if(response.pages==self.currPage){
 						self.isPageEnd = true;
 					}
-					for(var item in response.result){
+					response.result.map(function(item,index){
 						self.sample.push(item);
-					}
-					self.sample=response.result;
+					});
+					//self.sample=response.result;
 					//console.log('self.isPageEnd',self.isPageEnd);
 				}else{
 					//console.log("请求出错！")
@@ -60,7 +60,7 @@ export default{
 				scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop,
     					innerHeight = document.body.clientHeight,
     					offsetHeight = document.body.scrollHeight;
-    					that.isLoadingMore=true;
+    					//that.isLoadingMore=true;
 			if(scrollTop + innerHeight >= offsetHeight) {
 				if(!that.isPageEnd){
 					that.currPage+=1;

@@ -1,18 +1,4 @@
-@import url(normalize.css);
-html{font: 10px/1 "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu}
-a{color: #666;text-decoration: none;}
-body{background: #f3f3f3;}
-ul, li{
-	margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-body{background: #f3f3f3;}
-.wrapper{
-	background: #f3f3f3;
-	padding:42px 0 100px 0;
-	font-size: 0;
-}
+
 .swiper-pagination-bullet{
 	background: none;
 	border:1px solid #fff;
@@ -23,21 +9,6 @@ body{background: #f3f3f3;}
 .swiper-pagination-bullet-active{
 	background: #fff;
 }
-/*清除浮动*/
-.clearfix:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-/*单行省略*/
-.ellipsis{
-	overflow: hidden;
-	text-overflow:ellipsis;
-	white-space: nowrap;
-}
-.loading{padding: 8px 0;font-size: 12px;}
 /*头部搜索*/
 header{
 	position: relative;
@@ -46,7 +17,7 @@ header{
 	position: fixed;
 	top: 0;
 	left: 50%;
-	z-index: 666;
+	z-index: 66;
 	width: 100%;
 	max-width: 640px;
 	min-width:320px;

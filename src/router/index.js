@@ -7,6 +7,7 @@ import sampleCenter from '@/components/samplecenter'
 import newProduct from '@/components/newProduct'
 import search from '@/components/search'
 import excellentCom from '@/components/excellent-company'
+import productList from '@/components/productList'
 
 Vue.use(Router)
 export default new Router({
@@ -37,15 +38,19 @@ export default new Router({
       component:newProduct
     },
     {
-      name:'search',
+      name:'search',//全站搜索
       path:'/search',
       component:search
     },
     {
-      name:'excellentCom',
+      name:'excellentCom',//优质企业
       path:'/excellentCom',
       component:excellentCom
+    },
+    {
+      name:'productList',//产品列表
+      path:'/productList/:keyword',
+      component:productList
     }
-
   ]
 })

@@ -65,6 +65,7 @@ export default{
 				}else if(self.historyProduct === null ){//已清空
 					self.historyProduct = [];
 				}
+				if(self.keyword && self.keyword !=" ")
 				self.historyProduct.unshift(self.keyword);
 				localStorage.setItem('historyProduct',self.historyProduct);
 			}else{
@@ -75,7 +76,8 @@ export default{
 				}
 				self.historyCom.unshift(self.keyword);
 				localStorage.setItem('historyCom',self.historyCom);
-			}
+			};
+			this.$router.push({path:'/productList/'+self.keyword});
 		},
 		getHistory(){//获取历史搜索 （本地存储）
 			var self = this;

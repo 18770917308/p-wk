@@ -32,7 +32,7 @@ export default{
 			var self = this,
 				url = 'index.php/supplier/category/index',
 				response = self.ajaxCommon(url);
-				//console.log('分类：',response);
+				console.log('分类：',response);
 				if(response.responseJSON.status == 1){
 					self.category = response.responseJSON.result;
 					self.catid = self.category[0].catid;
@@ -47,6 +47,9 @@ export default{
 		},
 		toBack(){
 			this.$router.go(-1);
+		},
+		goSearch(){//跳转至搜索
+			this.$router.push({path:'/search'});
 		}
 	}
 }

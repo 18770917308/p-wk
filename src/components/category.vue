@@ -4,7 +4,7 @@
 			<header class="header">
 				<div class="search-wrap">
 					<i class="search-icon"></i>
-					<input type="text" class="search-input" placeholder="搜索产品/供应商">
+					<input type="text" class="search-input" placeholder="搜索产品/供应商" @click="goSearch">
 				</div>
 				<router-link class="to-back" to="/"></router-link>
 			</header>
