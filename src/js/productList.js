@@ -52,14 +52,14 @@ export default{
 		},
 		getSearchRes(type){//获取搜索结果
 			var self = this,
-				url = 'Buyer/Product/productList/',
+				url = 'Buyer/v2/product/productList/',
 				data = {
 					type:type,
 					keyword:self.keyword,
 					page:self.currPage	
 				},
 				response = self.ajaxCommon(url,data).responseJSON;
-				console.log(response);
+				//console.log(response);
 			if(response.status == 1){
 				if(response.pages==self.currPage){
 					self.isPageEnd = true;
@@ -75,7 +75,7 @@ export default{
 		},
 		getCategory(){//获取分类
 			var self = this,
-				url = 'index.php/supplier/category/index',
+				url = 'Buyer/v3/Category/index/',
 				response = self.ajaxCommon(url);
 				console.log('分类：',response);
 				if(response.responseJSON.status == 1){
@@ -113,14 +113,16 @@ export default{
 		showFilter(){//显示筛选条件
 			this.isShowFilter = true;
 		},
-		serverFilter(type){//服务选择
-			this.server = type;
-		},
-		timeFilter(time){//时间选择
-			this.time = time;
-		},
-		categoryFilter(id){//分类选择
-			this.catid = id;
+		choseFilters(index1,id){//服务选择
+			console.log('index1:',index1);
+			console.log('id:',id);
+			var self = this;
+			switch(index1){
+				case 0: self.server = id; break;
+				case 1: self.time = id;break;
+				case 2: self.catid = id;break;
+				default: console.log("error");
+			}
 		},
 		resetFilter(){//重置筛选条件
 			var self = this;

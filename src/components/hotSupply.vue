@@ -4,7 +4,7 @@
 		<!--产品列表-->
 		<ul >
 			<li v-for="item in list" class="list-item clearfix">
-				<a href="#/category">
+				<router-link :to="{name:'productDetail',params: {id:item.productid}}">
 					<div class="img-con fl">
 						<img v-lazy="item.img" alt="product image">
 					</div>
@@ -13,7 +13,7 @@
 						<div class="price red">{{item.price}}</div>
 						<div class="heat red"><i class="le-icon icon-hot"></i>{{item.deg}}</div>
 					</div>
-				</a>
+				</router-link>
 				
 			</li>
 		</ul>

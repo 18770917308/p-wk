@@ -42,6 +42,8 @@
 	position: fixed;
 	top: 46px;
 	width: 100%;
+	max-width: 640px;
+	min-width: 320px;
 	z-index: 33;
 	padding: 0 20px;
 	font-size: 15px;

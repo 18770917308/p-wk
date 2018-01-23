@@ -1,4 +1,3 @@
-
 .swiper-pagination-bullet{
 	background: none;
 	border:1px solid #fff;
@@ -9,77 +8,7 @@
 .swiper-pagination-bullet-active{
 	background: #fff;
 }
-/*头部搜索*/
-header{
-	position: relative;
-	background: #fccf00;
-	box-sizing: border-box;
-	position: fixed;
-	top: 0;
-	left: 50%;
-	z-index: 66;
-	width: 100%;
-	max-width: 640px;
-	min-width:320px;
-	box-sizing: border-box;
-	-webkit-transform: translate(-50%,0);  
-      -ms-transform: translate(-50%,0);  
-          transform: translate(-50%,0);
-}
-.header{
-	padding: 5px 45px;
-}
-.search-wrap{
-	padding:  0 10px;
-	position: relative;
-	font-size: 14px;
-	color: #666;
-	box-sizing: border-box;
-	overflow: hidden;
-}
-.search-input{
-	border:0;
-	background: #fee767;
-	width: 100%;
-	height: 100%;
-	padding: 10px 0 10px 24px;
-	border-radius: 6px;
-	outline: 0;
-	box-sizing: border-box;
-}
-.search-icon{
-	width: 16px;
-	height: 16px;
-	display: block;
-	background: url('../assets/image/icon-search.png') center no-repeat;
-	background-size: cover;
-	position: absolute;
-	top: 50%;
-	left: 14px;
-	margin: -8px 0;
-}
-.scan-icon,.inf-icon{
-	display: block;
-	width: 26px;
-	height: 28px;
-	position: absolute;
-	top: 50%;
-	margin: -14px 0;
-}
-.scan-icon{
-	background: url('../assets/image/icon-scan.png') center no-repeat;
-	background-size: 25px;
-	left: 10px;
-}
-.inf-icon{
-	background: url('../assets/image/icon-inf.png') center no-repeat;
-	background-size: 21px;
-	right: 10px;
-}
 /*轮播*/
-.banner-wrap{
-	
-}
 .swiper-wrapper img {
   width: 100%;
   height: 100%;
@@ -338,7 +267,7 @@ header{
 	width: 33.4%;
 	padding-right: 15px;
 	box-sizing: border-box;
-	min-height: 140px;
+	min-height: 100px;
 	overflow: hidden;
 	max-width: 185px;
 	max-height: 185px;
@@ -544,42 +473,6 @@ header{
 }
 .rec-con-major{
 	color: #999;
-}
-footer{
-	position: fixed;
-	width: 100%;
-	max-width: 640px;
-	min-width: 320px;
-	bottom: 0;
-	left: 50%;
-	background: #fff;
-	z-index: 666;
-	border-top: 1px solid #e0e0e0;
-	-webkit-transform: translate(-50%,0);  
-      -ms-transform: translate(-50%,0);  
-          transform: translate(-50%,0);
-}
-.foot-menu-item{
-	float: left;
-	width: 25%;
-}
-.foot-menu-item a{
-	display: block;
-	padding-top: 5px;
-}
-.foot-icon{
-	display: block;
-	text-align: center;
-	font-size: 0;
-}
-.foot-icon  img{
-	width: 25px;
-}
-.foot-w{
-	font-size: 12px;
-	color: #333;
-	text-align: center;
-	margin: 5px 0;
 }
 @media screen and (max-width: 320px){
 	.rec-con-sign{

@@ -1,0 +1,163 @@
+.buyDetail{
+	font-size: 0;
+	padding: 46px 0;
+}
+.buyDetail-header{
+	height: 46px;
+	border-bottom: 1px solid #d2d2d2;
+}
+.buyer{
+	display: block;
+	position: relative;
+	padding: 10px;
+	background: #fff;
+	text-align: left;
+}
+.buyer-img,.buyer-name,.buyer-verification{vertical-align: middle;}
+.buyer-img{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+}
+.buyer-img img{
+	width: 100%;
+	height: 100%;
+}
+.buyer-name{
+	font-size: 15px;
+	color: #666;
+	margin: 0 10px;
+}
+.buyer-verification{
+	display: inline-block;
+	height: 24px;
+	line-height: 24px;
+	box-sizing: border-box;
+	padding: 0 2px 0 16px;	
+	border-radius: 4px;
+	font-size: 10px;
+	color: #fccf00;
+	border:1px solid #fccf00;
+	background: url('../assets/image/icon-verification.png') 2px center no-repeat;
+	background-size: 12px;
+}
+.buyer-link{
+	width: 12px;
+	height: 18px;
+	background: url('../assets/icon/more.png') center no-repeat;
+	background-size: 12px;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin: -9px 0;
+}
+.buy-content{
+	background: #fff;
+	padding: 0 10px;
+	border-bottom: 1px solid #d2d2d2;
+	text-align: left;
+	margin-top: 10px;
+}
+.con-detail{
+	font-size: 14px;
+	color: #444;
+	line-height: 20px;
+}
+.buy-con-title{
+	font-size: 15px;
+	color: #333;
+	padding: 20px 0;
+	margin: 0;
+}
+.buy-con-line{
+	margin: 0 0 15px 0;
+	font-size: 14px;
+	color: #444;
+}
+.high-color{
+	color: #fd0100;
+}
+.but-con-img{
+	padding: 10px 0;
+}
+.but-con-img li{
+	float: left;
+	position: relative;
+	width: 23%;
+	padding-top: 23%;
+	margin-right: 2%;
+	background: #ccc;
+}
+.but-con-img li img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.buy-con-inf{
+	padding: 10px;
+	text-align: left;
+	font-size: 12px;
+	color: #666;
+	background: #fff;
+}
+.buy-con-inf span{
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;
+	padding-left: 21px;
+	margin-right: 12px;
+}
+.buy-con-attention{
+	background: url('../assets/image/buy-sprite.png') 0 -37px  no-repeat;
+	background-size: 15px;
+}
+.buy-con-contact{
+	background: url('../assets/image/buy-sprite.png') 0 -19px no-repeat;
+	background-size: 15px;
+}
+.buy-con-price{
+	background: url('../assets/image/buy-sprite.png') 0 0 no-repeat;
+	background-size: 15px;
+}
+.buy-con-foot{
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    border-top: 1px solid #e0e0e0;
+    background: #fff;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    z-index: 22;
+}
+.buy-con-foot button{
+	height: 50px;
+	line-height: 50px;
+	border:0;
+}
+.buy-foot-attention{
+	width: 22%;
+	background: #fff;
+}
+.buy-foot-attention img{
+	width: 25px;
+}
+.quote{
+	width: 39%;
+	background: #fe0000;
+	color: #fff;
+	font-size: 17px;
+}
+.buy-foot-contact{
+	width: 39%;
+	color: #fff;
+	font-size: 17px;
+	background: #333;
+}

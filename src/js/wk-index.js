@@ -44,16 +44,16 @@ export default {
 		swiper,
 		swiperSlide,
 		isEnd
-	},
+	},/*
 	computed: {
 		swiper() {
 			return this.$refs.mySwiper1.swiper;
 		}
-	},
+	},*/
 	mounted () {  
 	    		var that = this;
     			if(that.swiperOption){
-    				this.swiper.slideTo(0, 0, true);
+    				//this.swiper.slideTo(0, 0, true);
     			//
     			setInterval(function() {
     				that.swiper;

@@ -7,7 +7,7 @@
 			</header>
 			<ul class="sample-list">
 				<li v-for="item in sample"> 
-					<router-link to="/category" class="sample-item clearfix">
+					<router-link :to="{name:'productDetail',params: {id:item.productid}}" class="sample-item clearfix">
 						<i class="sample-img"><img v-lazy="item.thumb"></i>
 						<div class="sample-con">
 							<p class="sample-name ellipsis" v-text="item.title">title</p>

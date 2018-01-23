@@ -51,43 +51,43 @@
 			<div class="our-major">
 				<ul class="major-block-1">
 					<li class="major-1 major-item-1">
-						<a href="#">
+						<router-link to="/productList/OEM">
 							<p>OEM/ODM</p>
 							<div>
 								<img src="../assets/image/img-prod2.png" alt="">
 							</div>
 							
-						</a>
+						</router-link>
 					</li>
 					<li class="major-item-1">
 						<ul class="major-block-2">
 							<li class="major major-2">
-								<router-link to="/hello">
+								<router-link to="/productList/包材">
 									<div class="major-title">包材/辅材</div>
 									<div class="major-img"><img src="../assets/image/img-prod1.png" alt=""></div>
 								</router-link>
 							</li>
 							<li class="major major-3">
-								<a href="#">
+								<router-link to="/productList/设计">
 									<div class="major-title">设计/版权</div>
 									<div class="major-img"><img src="../assets/image/img-prod3.png" alt=""></div>
-								</a>
+								</router-link>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="major-block-3">
 					<li class="major major-4">
-						<a href="#">
+						<router-link to="/productList/美容">
 							<div class="major-title">美容/仪器</div>
 							<div class="major-img"><img src="../assets/image/img-prod5.png" alt=""></div>
-						</a>
+						</router-link>
 					</li>
 					<li class="major major-5">
-						<a href="#">
+						<router-link to="/productList/营销">
 							<div class="major-title">营销/推广</div>
 							<div class="major-img"><img src="../assets/image/img-prod4.png" alt=""></div>
-						</a>
+						</router-link>
 					</li>
 				</ul>
 			</div>
@@ -126,7 +126,7 @@
 				</div>
 				<ul class="rec-item-list" v-if="!isCom" v-for="item in recPro">
 					<li class="rec-item">
-						<a href="" class="clearfix">
+						<router-link :to="{name:'productDetail',params: {id:item.product_id}}" class="clearfix">
 							<i class="rec-img"><img v-lazy="item.thumb" alt=""></i>
 							<div class="rec-con">
 								<p class="rec-con-title ellipsis" v-text="item.title"></p>
@@ -134,7 +134,7 @@
 								<span class="rec-con-sign prod-exam">免费取样</span>
 								<p class="rec-con-main rec-con-price" v-text="item.price"></p>
 							</div>
-						</a>
+						</router-link>
 					</li>
 				</ul>
 				<ul class="rec-item-list" v-if="isCom">
@@ -170,25 +170,25 @@
 			<ul class="foot-menu clearfix">
 				<li class="foot-menu-item">
 					<a href="">
-						<i class="foot-icon"><img src="../assets/image/icon-index.png" alt=""></i>
+						<i class="foot-icon mall-icon active"></i>
 						<p class="foot-w">商城</p>
 					</a>
 				</li>
 				<li class="foot-menu-item">
-					<a href="">
-						<i class="foot-icon"><img src="../assets/image/icon-find.png" alt=""></i>
+					<router-link to="/find">
+						<i class="foot-icon find-icon"></i>
 						<p class="foot-w">发现</p>
-					</a>
+					</router-link>
 				</li>
 				<li class="foot-menu-item">
 					<a href="">
-						<i class="foot-icon"><img src="../assets/image/icon-msg.png" alt=""></i>
+						<i class="foot-icon contact-icon"></i>
 						<p class="foot-w">商谈</p>
 					</a>
 				</li>
 				<li class="foot-menu-item">
 					<a href="">
-						<i class="foot-icon"><img src="../assets/image/icon-account.png" alt=""></i>
+						<i class="foot-icon account-icon"></i>
 						<p class="foot-w">账号</p>
 					</a>
 				</li>

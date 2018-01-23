@@ -68,16 +68,18 @@ export default{
 				if(self.keyword && self.keyword !=" ")
 				self.historyProduct.unshift(self.keyword);
 				localStorage.setItem('historyProduct',self.historyProduct);
+				this.$router.push({path:'/productList/'+self.keyword});
 			}else{
 				if(self.historyCom && self.historyCom.length==5){//历史记录超过5条
 					self.historyCom.pop();
 				}else if(self.historyCom === null ){//已清空
 					self.historyCom = [];
 				}
+				if(self.keyword && self.keyword !=" ")
 				self.historyCom.unshift(self.keyword);
 				localStorage.setItem('historyCom',self.historyCom);
+				this.$router.push({path:'/companyList/'+self.keyword});
 			};
-			this.$router.push({path:'/productList/'+self.keyword});
 		},
 		getHistory(){//获取历史搜索 （本地存储）
 			var self = this;

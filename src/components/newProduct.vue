@@ -10,7 +10,7 @@
 			</div>
 			<ul class="list">
 				<li class="item" v-for='pro in item.list'>
-					<a href="#">
+					<router-link :to="{name:'productDetail',params: {id:pro.productid}}">
 						<div class="img-con">
 							<img v-lazy="pro.thumb" alt="">
 						</div>
@@ -19,7 +19,7 @@
 							<span class="price  red">{{pro.price}}/{{pro.units}}</span>
 							<i class="le-icon icon-free-sample"></i>
 						</div>
-					</a>
+					</router-link>
 				</li>
 			</ul>
 		</div>

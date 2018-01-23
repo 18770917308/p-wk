@@ -1,0 +1,223 @@
+.share-icon{
+	display: block;
+	width: 40px;
+	height: 30px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin: -15px 0;
+	background: url('../../assets/image/icon-share.png') center no-repeat;
+	background-size: 20px;
+}
+.company-top{
+	padding-bottom: 36%;
+	margin-top: 46px;
+	background: url('../../assets/image/company-bg.png') no-repeat;
+	position: relative;
+}
+.company-top-con{
+	position: absolute;
+	bottom: 10%;
+	width: 100%;
+	box-sizing: border-box;
+	padding:0 15px;
+	font-size: 0;
+}
+.company-inf{
+	float: left;
+	width: 70%;
+}
+.company-logo{
+	float: left;
+	width: 55px;
+	height: 55px;
+	overflow: hidden;
+}
+.company-logo img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.company-sign{
+	float: left;
+	padding-left: 10px;
+}
+.company-name{
+	font-size: 13px;
+	color: #fff;
+	text-align: center;
+	margin: 7px 0;
+	text-align: left;
+}
+.company-type,.company-level{
+	width: 60px;
+	height: 20px;
+	display: inline-block;
+}
+.company-level{
+	margin-left: 10px;
+}
+.company-type3{
+	background: url('../../assets/image/com-maker.png') no-repeat;
+	background-size: 60px;
+}
+.company-level3{
+	background: url('../../assets/image/com-strength.png') no-repeat;
+	background-size: 60px;
+}
+.attention{
+	float: right;
+	border-radius: 4px;
+	vertical-align: bottom;
+	position: relative;
+	top: 11px;
+	overflow: hidden;
+}
+.attention li{
+	height: 22px;
+	line-height: 22px;
+	font-size: 13px;
+}
+.attention-num{
+	background: #fff;
+	color: #666;
+	padding: 0 7px;
+}
+.attention-btn{
+	background: #ccc;
+	color: #fff;
+}
+.company-nav{
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background: #fff;
+}
+.company-nav li{
+	width: 33.33%;
+	font-size: 15px;
+	padding: 16px 0;
+}
+.company-nav .active{position: relative;color: #333;}
+.company-nav .active::before{
+	content: '';
+	display: block;
+	width: 90px;
+	height: 2px;
+	background: #000;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin: 0 -45px;
+}
+.company-products{
+	background: #fff;
+}
+.company-products-item{
+	border-bottom: 1px solid #e0e0e0;
+}
+.company-products-link{
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px 20px;
+}
+.company-products-img{
+	display: block;
+	float: left;
+	width: 33.4%;
+	padding-right: 15px;
+	box-sizing: border-box;
+	min-height: 100px;
+	overflow: hidden;
+	max-width: 185px;
+	max-height: 185px;
+}
+.company-products-img img{
+	max-width: 100%;
+}
+.company-products-con{
+	float: left;
+	width: 66.6%;
+	text-align: left;
+	font-size: 0;
+}
+.company-products-title{
+	font-size: 14px;
+	line-height: 24px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	color: #333;
+	margin: 5px 0 0 0;
+}
+.company-products-sign{
+	display: inline-block;
+	font-size: 11px;
+	color: #fccf00;
+	border:1px solid #fccf00;
+	padding:4px 4px 4px 18px;
+	border-radius:5px;
+	margin: 3% 0 0 0;
+	position: relative;
+}
+.company-products-main{
+	font-size: 13px;
+	margin: 4% 0 0 0;
+}
+.company-products-price{
+	color:#f00;
+}
+/*企业展厅*/
+.company-hall{
+	padding: 10px;
+	font-size: 0;
+}
+.hall-title{
+	font-size: 15px;
+	color: #333;
+	text-align: left;
+	padding-left: 16px;
+	position: relative;
+	margin: 15px 0;
+}
+.hall-title::before{
+	content:'';
+	display: block;
+	width: 5px;
+	height: 16px;
+	background: #fccf00;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin: -8px 0;
+}
+.hall-content{
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 9px;
+}
+.panoramic-img{
+	width: 100%;
+}
+.icon-panoramic{
+	display: block;
+	width: 44px;
+	height: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -25px -22px;
+}
+.icon-panoramic img{width: 100%;}
+.video-btn{
+	display: block;
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -22.5px;
+}
+.video-btn img{width: 100%}

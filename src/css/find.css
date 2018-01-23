@@ -1,0 +1,165 @@
+.find{
+	font-size: 0;
+	padding: 46px 0 60px;
+}
+.find-header{
+	height: 46px;
+	border-bottom: 1px solid #d2d2d2;
+}
+.find-top{
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background: #fff;
+}
+.find-top-label{
+	width: 25%;
+	padding: 10px 0;
+	position: relative;
+}
+.find-top-label.active::before{
+	content: '';
+	display: block;
+	width: 70px;
+	height: 2px;
+	background: #333;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin: 0 -35px;
+}
+.find-top-label i{
+	display: block;
+	height: 43px;
+	text-align: center;
+}
+.find-top-label img{
+	width: 43px;
+}
+.find-top-label p{
+	font-size: 13px;
+	color: #414141;
+	margin: 5px 0 0;
+}
+.z-essay{
+	padding: 10px;
+	box-sizing: border-box;
+	height: 60px;
+}
+.z-essay p{
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	line-height: 60px;
+	background: #c6c6c6;
+	margin: 0;
+	border-radius: 5px;
+}
+.headline-list{
+	padding: 5px 0;
+}
+.headline-list li{
+	padding: 5px 0;
+}
+.headline-item{
+	display: block;
+	background: #fff;
+	padding: 16px 10px 10px;
+}
+.headline-left{
+	float: left;
+	width: 60%;
+	font-size: 14px;
+	color: #333;
+}
+.headline-title{
+	line-height: 24px;
+	height: 72px;
+	margin: 0;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	text-align: left;
+}
+.headline-line{
+	font-size: 12px;
+	color: #666;
+	padding: 5px 0;
+}
+.headline-label{
+	float: left;
+	padding: 0 10px;
+	height: 16px;
+	border-radius: 8px;
+	line-height: 16px;
+	border:1px solid #ccc;
+}
+.headline-time{
+	float: right;
+	padding-left: 20px;
+	height: 16px;
+	line-height: 16px;
+	background: url('../assets/image/icon-time.png') left center no-repeat;
+	background-size: 12px;
+}
+.headline-img{
+	float: left;
+	width: 40%;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+.headline-img img{
+	max-width: 100%;
+}
+/*求购*/
+.buy-item{
+	display: block;
+	margin-top: 10px;
+	padding: 0 10px;
+	background: #fff;
+	text-align: left;
+}
+.buy-title{
+	font-size: 15px;
+	color: #333;
+	padding: 14px 0;
+}
+.buy-num{
+	color: #f10408;
+	font-size: 14px;
+	margin-bottom: 12px;
+}
+.buy-type,.buy-outtime{
+	font-size: 13px;
+	color: #999;
+}
+.buy-outtime{
+	padding: 10px 0;
+}
+.buy-inf{
+	font-size: 12px;
+	color: #666;
+	padding-bottom: 10px;
+}
+.buy-inf span{
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;
+	padding-left: 21px;
+	margin-right: 12px;
+}
+.buy-attention{
+	background: url('../assets/image/buy-sprite.png') 0 -37px  no-repeat;
+	background-size: 15px;
+}
+.buy-contact{
+	background: url('../assets/image/buy-sprite.png') 0 -19px no-repeat;
+	background-size: 15px;
+}
+.buy-price{
+	background: url('../assets/image/buy-sprite.png') 0 0 no-repeat;
+	background-size: 15px;
+}

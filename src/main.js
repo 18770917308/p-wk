@@ -9,10 +9,16 @@ import 'swiper/dist/css/swiper.css'
 import './css/normalize.css'
 import './css/base.css'
 import './css/wk-index.css'
+import './css/find.css'
+import './css/newsDetail.css'
+import './css/buyDetail.css'
 import './css/category.css'
 import './css/samplecenter.css'
 import './css/search.css'
 import './css/productList.css'
+import './css/productDetail.css'
+import './css/companyList.css'
+import './css/company/companyHome.css'
 import loading from 'assets/icon/img-loading.gif'
 Vue.use(vueLazyLoad,{
 	preLoad:1.3,
@@ -20,7 +26,7 @@ Vue.use(vueLazyLoad,{
 	attempt:1,
 })
 Vue.use(VueAwesomeSwiper)
-Vue.prototype.baseUrl= 'http://apis.wkmill.com/';
+Vue.prototype.baseUrl= 'http://apis.wkmill.com:8066/';
 
 Vue.config.productionTip = false
 

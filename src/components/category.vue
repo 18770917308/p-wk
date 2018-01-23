@@ -17,10 +17,10 @@
 						<p class="kind-name" v-text="cItem.catname"></p>
 						<ul class="kinds-child-ul clearfix">
 							<li class="kinds-child-li" v-for="sItem in cItem.son">
-								<a href="#">
+								<router-link :to="{name:'productList',params: {keyword:sItem.catname}}">
 									<i class="kinds-img"><img v-lazy="sItem.image" alt=""></i>
 									<span class="k-name ellipsis" v-text="sItem.catname"></span>
-								</a>
+								</router-link>
 							</li>
 						</ul>
 					</div>

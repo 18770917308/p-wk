@@ -1,0 +1,61 @@
+.companyList{
+	font-size: 0;
+}
+.search-keyword{
+	position: absolute;
+	left: 32px;
+	top: 50%;
+	height: 24px;
+	margin: -12px 0;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.search-keyword span{
+	background: #666;
+	color: #fff;
+	line-height: 24px;
+	text-align: center;
+	padding: 0 6px;
+}
+.keyword{
+	font-size: 14px;
+	margin-right: 2px;
+}
+.delete-keyword{
+	font-size: 16px;
+}
+.fliter-company{
+	position: fixed;
+	top: 46px;
+	width: 100%;
+	max-width: 640px;
+	min-width: 320px;
+	z-index: 33;
+	padding: 0 20px;
+	font-size: 15px;
+	color: #999;
+	box-sizing: border-box;
+	background: #fff;
+}
+.fliter-company li{
+	float: left;
+	width: 33.33%;
+	padding: 16px 0;
+	text-align: center;
+	position: relative;
+}
+.fliter-company .active{color: #333;}
+.fliter-company .active::before{
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #000;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.companys{
+	margin-top: 93px;
+}
