@@ -33,11 +33,13 @@
 			<span class="buy-con-contact">商谈：{{buyDetail.discuss_count}}</span>
 			<span class="buy-con-price">报价：{{buyDetail.quoter_count}}</span>
 		</div>
-		<footer class="buy-con-foot">
+		<footer class="buy-con-foot" @click="showDia">
 			<button class="buy-foot-attention"><img src="../assets/image/collect-product.png" alt=""></button>
 			<button class="quote">立即报价</button>
 			<button class="buy-foot-contact">联系商谈</button>
 		</footer>
+		<!--弹窗组件-->
+		<dialogue modal-title="请下载APP以获得更多体验" ok-btn="我要下载" cancel-btn="我再想想" v-on:cancel="hideDialogue" v-on:sureOpt="downAPP" v-if="isShowDia"></dialogue>
 	</div>
 </template>
 <script src="../js/buyDetail.js"></script>

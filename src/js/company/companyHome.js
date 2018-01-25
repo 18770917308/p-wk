@@ -1,12 +1,17 @@
 import $ from 'jquery'
+import dialogue from '@/components/common/dialogue'
 var vmData = {
 	type:1,//1全部产品 2新品上架
-	products:null
+	products:null,
+	isShowDia:false
 };
 export default{
 	name:'companyHome',
 	data(){
 		return vmData;
+	},
+	components:{
+		dialogue
 	},
 	created:function(){
 		this.type = 1;
@@ -67,6 +72,15 @@ export default{
 		},
 		goSearch(){//跳转至搜索
 			this.$router.push({path:'/search'});
+		},
+		showDia(){//显示对话框
+			this.isShowDia =true;
+		},
+		hideDialogue(){//隐藏对话框
+			this.isShowDia =false;
+		},
+		downAPP(){//点击确定 下载APP 需判断设备类型 Android or iOS
+			this.isShowDia =false;
 		}
 	}
 }

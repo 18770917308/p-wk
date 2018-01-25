@@ -1,6 +1,6 @@
 <template>
 	<div class="companyHome">
-		<header class="search-header">
+		<header class="search-header header">
 				<div class="search-wrap" @click="goSearch">
 					<i class="search-icon"></i>
 					<input type="text" class="search-input" placeholder="搜索产品/供应商">
@@ -14,8 +14,8 @@
 					<i class="company-logo"><img v-lazy="products.logo" alt=""></i>
 					<div class="company-sign">
 						<p class="company-name ellipsis" v-text="products.companyname"></p>
-						<span class="company-type company-type2" v-if="products.pattern==2">供应商</span>
-						<span class="company-type company-type3" v-if="products.pattern==1">采购商</span>
+						<span class="company-type company-type2" v-if="products.pattern==2">制造商</span>
+						<span class="company-type company-type3" v-if="products.pattern==1">服务商</span>
 						<span class="company-level company-level3" v-if="products.mfrs_level==3"></span>
 						<span class="company-level company-level2" v-if="products.mfrs_level==2"></span>
 						<span class="company-level company-level1" v-if="products.mfrs_level==1"></span>
@@ -74,6 +74,12 @@
 			</div>
 			<p class="hall-title">精品推荐</p>
 		</div>
+		<footer class="companyHome-foot">
+			<router-link :to='{name:"companyIntroduction",params:{id:$route.params.id}}' class="go-introduce">企业介绍</router-link>
+			<a href="javascript:void(0)" @click="showDia" class="link-introduce">联系商谈</a>
+		</footer>
+		<!--弹窗组件-->
+		<dialogue modal-title="请下载APP以获得更多体验" ok-btn="我要下载" cancel-btn="我再想想" v-on:cancel="hideDialogue" v-on:sureOpt="downAPP" v-if="isShowDia"></dialogue>
 	</div>
 </template>
 <script src="../../js/company/companyHome.js"></script>

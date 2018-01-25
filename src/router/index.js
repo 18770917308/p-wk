@@ -11,6 +11,7 @@ const productList = ()=> import(/*webpackChunkName:"productList"*/'@/components/
 const productDetail = ()=> import(/*webpackChunkName:"productDetail"*/'@/components/productDetail')
 const companyList = ()=> import(/*webpackChunkName:"companyList"*/'@/components/companyList')
 const companyHome = ()=> import(/*webpackChunkName:"companyHome"*/'@/components/company/companyHome')
+const companyIntroduction = ()=> import(/*webpackChunkName:"companyIntroduction"*/'@/components/company/companyIntroduction')
 const find = ()=> import(/*webpackChunkName:"find"*/'@/components/find')
 const newsDetail = ()=> import(/*webpackChunkName:"newsDetail"*/'@/components/newsDetail')
 const buyDetail = ()=> import(/*webpackChunkName:"buyDetail"*/'@/components/buyDetail')
@@ -77,6 +78,11 @@ export default new Router({
       name:'companyHome',//企业主页
       path:'/company/companyHome/:id',
       component:companyHome
+    },
+    {
+      name:'companyIntroduction',//企业介绍
+      path:'/company/companyIntroduction/:id',
+      component:companyIntroduction
     },
     {
       name:'newsDetail',//资讯详情

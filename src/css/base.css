@@ -27,6 +27,16 @@ body{background: #f3f3f3;}
 	white-space: nowrap;
 }
 .loading{padding: 8px 0;font-size: 12px;}
+.swiper-pagination-bullet{
+	background: none;
+	border:1px solid #fff;
+	opacity: 1;
+	width: 6px;
+	height: 6px;
+}
+.swiper-pagination-bullet-active{
+	background: #fff;
+}
 /*头部搜索*/
 header{
 	position: relative;
@@ -55,7 +65,7 @@ header{
 	line-height: 46px;
 }
 .search-wrap{
-	padding:  0 10px;
+	/* padding:  0 10px; */
 	position: relative;
 	font-size: 14px;
 	color: #666;
@@ -80,7 +90,7 @@ header{
 	background-size: cover;
 	position: absolute;
 	top: 50%;
-	left: 14px;
+	left: 6px;
 	margin: -8px 0;
 }
 .scan-icon,.inf-icon{
@@ -100,6 +110,29 @@ header{
 	background: url('../assets/image/icon-inf.png') center no-repeat;
 	background-size: 21px;
 	right: 10px;
+}
+.to-back {
+    display: block;
+    width: 26px;
+    height: 28px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin: -14px 0;
+    background: url('../assets/image/icon-back.png') 50% no-repeat;
+    background-size: 11px;
+}
+.prod-exam::before{
+	content: '';
+	display: block;
+	width: 10px;
+	height: 14px;
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	background: url('../assets/image/icon-example.png') center no-repeat;
+	background-size: 10px;
+	margin: -7px 0
 }
 footer{
 	position: fixed;

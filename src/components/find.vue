@@ -3,8 +3,8 @@
 		<!--头部-->
 		<header class="find-header">
 			<p class="h-title">发现</p>
-			<a class="scan-icon" href="javascipt:void(0)"></a>
-			<a class="inf-icon" href="javascipt:void(0)"></a>
+			<a class="scan-icon" href="javascipt:void(0)" @click="showDia"></a>
+			<a class="inf-icon" href="javascipt:void(0)" @click="showDia"></a>
 		</header>
 		<ul class="find-top">
 			<li class="find-top-label" :class='{active:findModule==1}' @click="choseModule(1)">
@@ -87,6 +87,8 @@
 				</li>
 			</ul>
 		</footer>
+		<!--弹窗组件-->
+		<dialogue modal-title="请下载APP以获得更多体验" ok-btn="我要下载" cancel-btn="我再想想" v-on:cancel="hideDialogue" v-on:sureOpt="downAPP" v-if="isShowDia"></dialogue>
 	</div>
 </template>
 <script src="../js/find.js"></script>

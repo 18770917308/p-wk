@@ -2,6 +2,7 @@ import $ from 'jquery'
 import { swiper, swiperSlide} from 'vue-awesome-swiper'
 import axios from 'axios'
 import isEnd from '@/components/common/isEnd'
+import dialogue from '@/components/common/dialogue'
 var vmData = {
 			indexObj1:[],
 			recPro:[],
@@ -28,7 +29,8 @@ var vmData = {
 	      				this.page = swiper.realIndex+1;
 	      				this.index=swiper.realIndex;
 	      			}
-	      	}
+	      	},
+	      	isShowDia:false
 		};
 export default {
 	name: 'wkIndex',
@@ -44,7 +46,8 @@ export default {
 	components: {
 		swiper,
 		swiperSlide,
-		isEnd
+		isEnd,
+		dialogue
 	},/*
 	computed: {
 		swiper() {
@@ -168,6 +171,15 @@ export default {
 		},
 		goSearch(){//跳转至搜索
 			this.$router.push({path:'/search'});
+		},
+		showDia(){//显示对话框
+			this.isShowDia =true;
+		},
+		hideDialogue(){//隐藏对话框
+			this.isShowDia =false;
+		},
+		downAPP(){//点击确定 下载APP 需判断设备类型 Android or iOS
+			this.isShowDia =false;
 		}
 	}
 }

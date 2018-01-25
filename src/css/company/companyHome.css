@@ -251,3 +251,32 @@
 	margin: -22.5px;
 }
 .video-btn img{width: 100%}
+.companyHome-foot{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-top: 1px solid #e0e0e0;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    z-index: 22;
+}
+.companyHome-foot a{
+	width: 50%;
+	font-size: 17px;
+	line-height: 50px;
+	height: 50px;
+}
+.go-introduce{
+	background: #fff;
+	color: #333;
+}
+.link-introduce{
+	background: #fe0000;
+	color: #fff;
+}

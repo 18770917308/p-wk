@@ -125,6 +125,7 @@
 	.sample-type{
 		width:72px;
 		height:20px;
+		line-height:20px;
 		padding:0 0 0 18px;
 		border:1px solid #fccf00;
 		color:#fccf00;

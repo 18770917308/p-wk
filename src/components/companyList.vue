@@ -1,6 +1,6 @@
 <template>
 	<div class="companyList">
-		<header class="search-header">
+		<header class="search-header header">
 				<div class="search-wrap" @click="goSearch">
 					<i class="search-icon"></i>
 					<input type="text" class="search-input">

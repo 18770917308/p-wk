@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import isEnd from '@/components/common/isEnd'
+import dialogue from '@/components/common/dialogue'
 var vmData = {
 	currPage1:1,//头条当前页
 	currPage2:1,//求购当前页
@@ -8,6 +9,7 @@ var vmData = {
 	isPageEnd1:false,//头条尾页
 	isPageEnd2:false,//求购尾页
 	findModule:2,//发现的模块 1猜你喜欢 2微库头条 3附近企业  4求购中心
+	isShowDia:false
 };
 export default{
 	name: 'find',
@@ -20,7 +22,8 @@ export default{
 		this.getBuyData();
 	},
 	components:{
-		isEnd
+		isEnd,
+		dialogue
 	},
 	mounted () {
 		//监听滚动
@@ -123,6 +126,15 @@ export default{
 			var day = date.getDate();
 			time = year+'-'+month+'-'+day;
 			return time;
+		},
+		showDia(){//显示对话框
+			this.isShowDia =true;
+		},
+		hideDialogue(){//隐藏对话框
+			this.isShowDia =false;
+		},
+		downAPP(){//点击确定 下载APP 需判断设备类型 Android or iOS
+			this.isShowDia =false;
 		}
 	}
 }
