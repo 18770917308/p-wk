@@ -3,7 +3,7 @@
 		<!--头部-->
 		<header class="newsDetail-header">
 			<p class="h-title">资讯详情</p>
-			<a class="scan-icon" href="javascipt:void(0)"></a>
+			<a class="to-back" @click="goBack"></a>
 			<a class="share-icon" href="javascipt:void(0)"></a>
 		</header>
 		<div class="newsDetail-content" v-html="newsDetail">
@@ -27,3 +27,4 @@
 	</div>
 </template>
 <script src="../js/newsDetail.js"></script>
+<style scoped src="../css/newsDetail.css"></style>

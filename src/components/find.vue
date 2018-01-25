@@ -90,3 +90,4 @@
 	</div>
 </template>
 <script src="../js/find.js"></script>
+<style scoped src="../css/find.css"></style>

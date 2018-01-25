@@ -1,7 +1,7 @@
 <template>
 	<div class="excellent-com">
 		<div class="top">
-			<router-link to="/"><i class="le-icon icon-back"></i></router-link>
+			<a @click="goBack"><i class="le-icon icon-back"></i></a>
 		    <strong>优质企业</strong>
 		</div>
 		<!--tab-->
@@ -15,13 +15,13 @@
 		<!--公司列表-->
 		<ul >
 			<li class="item" v-for="item in list">
-				<a href="#">
+				<router-link :to="{name:'companyHome',params:{id:item.com_id}}">
 					<div class="title">
 						<img v-lazy="item.logo" alt="">
 						<h3>{{item.companyname}}</h3>
 						<i class="le-icon icon-more"></i>
 					</div>
-				</a>
+				</router-link>
 				<div class="img-con">
 					<span v-if='!item.product.length'>暂无推荐产品</span>
 					<img v-lazy="pro.thumb" alt="" v-for="pro in item.product" v-else>
@@ -154,6 +154,9 @@
 					let page = this.store[this.tabIndex].currentIndex + 1
 					this._getDataFromServer(this.tabIndex,page)
 				}
+			},
+			goBack(){
+				this.$router.back()
 			}
 		},
 		computed:{

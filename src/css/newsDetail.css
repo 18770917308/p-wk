@@ -18,11 +18,12 @@
 	background-size: 20px;
 }
 .newsDetail-content{
-	padding: 0 17px 17px;
+	padding: 17px;
 	font-size: 14px;
 	color: #444;
 	text-align: left;
 	line-height: 26px;
+	background: #fff;
 }
 .recommend-line{
 	width: 80px;

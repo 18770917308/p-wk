@@ -77,7 +77,7 @@ export default{
 			var self = this,
 				url = 'Buyer/v3/Category/index/',
 				response = self.ajaxCommon(url);
-				console.log('分类：',response);
+				//console.log('分类：',response);
 				if(response.responseJSON.status == 1){
 					self.category = response.responseJSON.result;
 				}else{
@@ -164,6 +164,9 @@ export default{
 		},
 		goSearch(){
 			this.$router.push({path:'/search/'});
+		},
+		goBack(){
+			this.$router.back()
 		}
 	}
 }

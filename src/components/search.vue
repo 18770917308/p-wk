@@ -6,7 +6,7 @@
 					<i class="search-icon"></i>
 					<input type="text" class="search-input" v-model="keyword" placeholder="搜索产品/供应商">
 				</div>
-				<router-link class="to-back" to="/"></router-link>
+				<a class="to-back" @click="goBack"></a>
 				<a class="go-search" href="javascipt:void(0)" @click="goSearch()">搜索</a>
 		</header>
 		<div class="search-type clearfix">
@@ -46,3 +46,4 @@
 	</div>
 </template>
 <script src="../js/search.js"></script>
+<style scoped src="../css/search.css"></style>

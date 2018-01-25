@@ -92,5 +92,8 @@ export default{
 			self.companys = [];
 			self.getCompanyList(type);
 		},
+		goBack(){
+			this.$router.back()
+		}
 	}
 }

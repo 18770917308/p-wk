@@ -9,7 +9,7 @@
 						<span class="delete-keyword">×</span>
 					</div>
 				</div>
-				<router-link class="to-back" to="/"></router-link>
+				<a class="to-back" @click="goBack"></a>
 		</header>
 		<ul class="fliter-company clearfix">
 			<li :class='{active:searchType==1}' @click="choseSearchType(1)">综合</li>
@@ -18,7 +18,7 @@
 		</ul>
 		<ul class="companys">
 			<li class="rec-item" v-for="item in companys">
-				<router-link to="/company/companyHome" class="clearfix">
+				<router-link :to="{name:'companyHome',params: {id:item.comid}}" class="clearfix">
 					<i class="rec-img"><img v-lazy="item.logo" alt=""></i>
 					<div class="rec-con">
 						<p class="rec-con-title ellipsis" v-text="item.companyname"></p>
@@ -30,8 +30,8 @@
 							<span class="com-type com-type2" v-if="item.pattern==2">服务商</span>
 							<span class="com-type com-type3" v-if="item.pattern==3">制造商</span>
 							<span class="com-level com-level1" v-if="item.mfrs_level==1">认证厂家</span>
-							<span class="com-level com-level2" v-if="item.mfrs_level==2">优质厂家</span>
-							<span class="com-level com-level3" v-if="item.mfrs_level==3">实力厂家</span>
+							<span class="com-level com-level1" v-if="item.mfrs_level==2">优质厂家</span>
+							<span class="com-level com-level1" v-if="item.mfrs_level==3">实力厂家</span>
 						</div>
 						<div class="cert-status">
 							<span class="cert-status1" v-if="item.cert_status==1">企业认证</span>
@@ -45,3 +45,4 @@
 	</div>
 </template>
 <script src="../js/companyList.js"></script>
+<style scoped src="../css/companyList.css"></style>

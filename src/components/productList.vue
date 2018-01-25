@@ -9,7 +9,7 @@
 						<span class="delete-keyword">×</span>
 					</div>
 				</div>
-				<router-link class="to-back" to="/"></router-link>
+				<a class="to-back" @click="goBack"></a>
 				<a class="view-type" :class='{active:viewType}' @click="viewTypeToggle" href="javascipt:void(0)"></a>
 		</header>
 		<ul class="fliter-product clearfix">
@@ -74,3 +74,4 @@
 	</div>
 </template>
 <script src="../js/productList.js"></script>
+<style scoped src="../css/productList.css"></style>

@@ -5,7 +5,7 @@
 					<span class=" product-module" :class='{active:!isH5}' @click="changeView(1)">产品</span>
 					<span class="detail-module" :class='{active:isH5}' @click="changeView(2)">详情</span>
 				</div>
-				<router-link class="to-back" to="/"></router-link>
+				<a class="to-back" @click="goBack"></a>
 				<i class="share-icon"></i>
 		</header>
 		<div v-if="!isH5">
@@ -24,6 +24,7 @@
 		          <swiper-slide v-for="items in productDetail.exhibit">
 		            <img v-bind:src="items" alt="">
 		          </swiper-slide>
+		          <div class="swiper-pagination" slot="pagination"></div>
 			    </swiper>
 			</div>
 			<div class="product-inf">
@@ -39,7 +40,7 @@
 			<div v-if="productDetail.is_sample==1">
 				<div class="product-sample-block clearfix">
 					<span>产品样品</span>
-					<a href="">立即取样</a>
+					<a href="javascript:void(0)" @click="showDia">立即取样</a>
 				</div>
 				<ul class="product-attributes">
 					<li class="ellipsis"><span>样品名称：</span>&nbsp;&nbsp;{{productDetail.sample_name}}</li>
@@ -78,15 +79,15 @@
 					</li>
 				</ul>
 				<div class="p-com-service">
-					<a href="javascript:void(0)">企业客服</a>
-					<a href="javascript:void(0)">企业主页</a>
+					<a href="javascript:void(0)" @click="showDia">企业客服</a>
+					<router-link :to="{name:'companyHome',params:{id:productDetail.comid}}">企业主页</router-link>
 				</div>
 
 			</div>
 			<div class="drag" v-if="false">
 				<p>继续拖动 查看图文详情</p>
 			</div>
-			<div class="p-com-bottom">
+			<div class="p-com-bottom" @click="showDia">
 				<a href="javascript:void(0)" class="collect-product">
 					<i><img src="../assets/image/collect-product.png" alt=""></i>
 					<p>收藏产品</p>
@@ -99,6 +100,9 @@
 			</div>
 		</div>
 		<div class="showH5" v-html="pH5" v-if="isH5"></div>
+		<!--弹窗组件-->
+		<dialogue modal-title="请下载APP以获得更多体验" ok-btn="我要下载" cancel-btn="我再想想" v-on:cancel="hideDialogue" v-on:sureOpt="downAPP" v-if="isShowDia"></dialogue>
 	</div>
 </template>
 <script src="../js/productDetail.js"></script>
+<style scoped src="../css/productDetail.css"></style>

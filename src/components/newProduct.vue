@@ -17,7 +17,9 @@
 						<div class="text-con">
 							<h4>{{pro.title}}</h4>
 							<span class="price  red">{{pro.price}}/{{pro.units}}</span>
-							<i class="le-icon icon-free-sample"></i>
+							<span class="le-icon sample-type" v-if="pro.sampling_method==1">免费取样</span>
+							<span class="le-icon sample-type" v-if="pro.sampling_method==2">收费取样</span>
+							<span class="le-icon sample-type" v-if="pro.sampling_method==''">没有样品</span>
 						</div>
 					</router-link>
 				</li>
@@ -120,6 +122,17 @@
 		margin:0 auto;
 		padding-top:43px;
 	}
+	.sample-type{
+		width:72px;
+		height:20px;
+		padding:0 0 0 18px;
+		border:1px solid #fccf00;
+		color:#fccf00;
+		border-radius:4px;
+		font-size:11px;
+		background:url('~assets/image/icon-example.png') 2px center no-repeat;
+		background-size:10px;
+	}
 
 	.top{
 		position:fixed;
@@ -181,7 +194,7 @@
 	.list{
 		display:flex;
 		flex-direction:column;
-		
+		background:#fff;
 		.item{
 			border-bottom:1px solid #e0e0e0;
 			&:nth-last-of-type(1){

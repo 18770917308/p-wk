@@ -36,6 +36,9 @@ export default{
 				response = self.ajaxCommon(url,data);
 				console.log("资讯详情：",response);
 				self.newsDetail = response.responseText;
+		},
+		goBack(){
+			this.$router.back()
 		}
 	}
 }

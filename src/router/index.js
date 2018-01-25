@@ -25,7 +25,7 @@ export default new Router({
     },
     {
       name:'find',//发现
-      path:'/find',
+      path:'/find/:module',
       component:find
     },
     {
@@ -75,7 +75,7 @@ export default new Router({
     },
     {
       name:'companyHome',//企业主页
-      path:'/company/companyHome',
+      path:'/company/companyHome/:id',
       component:companyHome
     },
     {

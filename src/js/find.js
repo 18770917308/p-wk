@@ -15,7 +15,9 @@ export default{
 		return vmData;
 	},
 	created:function(){
+		this.findModule = this.$route.params.module;
 		this.getNewsData();
+		this.getBuyData();
 	},
 	components:{
 		isEnd
@@ -76,6 +78,7 @@ export default{
 					self.isPageEnd1 = true;
 				}
 				response.result.map(function(item,index){
+						item.inputtime = self.formatDate(item.inputtime+'000');
 						self.news.push(item);
 					});
 			}else{
@@ -110,6 +113,16 @@ export default{
 				case 4: self.getBuyData();break;
 				default:alert("error");
 			}
+		},
+		formatDate(str){//日期格式化
+			var date = new Date(),
+				time;
+			date.setTime(str);
+			var year = date.getFullYear();
+			var month = date.getMonth()+1;
+			var day = date.getDate();
+			time = year+'-'+month+'-'+day;
+			return time;
 		}
 	}
 }

@@ -2,7 +2,7 @@
 	<div class="buyDetail">
 		<!--头部-->
 		<header class="buyDetail-header">
-			<router-link class="to-back" to="/"></router-link>
+			<a class="to-back" @click="goBack"></a>
 			<p class="h-title">求购详情</p>
 		</header>
 		<a class="buyer">
@@ -25,7 +25,7 @@
 				<li><img v-lazy="item" alt="3"></li>
 			</ul> -->
 			<ul class="clearfix but-con-img">
-				<li v-for="(item,index) in thumb"><img v-bind:src="item" alt="1"></li>
+				<li v-for="(item,index) in buyDetail.thumb"><img v-bind:src="item" alt="1"></li>
 			</ul>
 		</div>
 		<div class="buy-con-inf">
@@ -41,3 +41,4 @@
 	</div>
 </template>
 <script src="../js/buyDetail.js"></script>
+<style scoped src="../css/buyDetail.css"></style>

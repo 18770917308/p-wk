@@ -1,11 +1,6 @@
 import $ from 'jquery'
 var vmData = {
-	buyDetail:'',
-	thumb:[
-		'src/assets/image/img1.jpg',
-		'src/assets/image/img2.jpg',
-		'src/assets/image/img3.jpg'
-	]
+	buyDetail:''
 };
 export default{
 	name: 'buyDetail',
@@ -45,6 +40,9 @@ export default{
 				}else{
 					console.log("请求出错");
 				}
+		},
+		goBack(){
+			this.$router.back()
 		}
 	}
 }

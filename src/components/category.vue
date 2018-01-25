@@ -6,7 +6,7 @@
 					<i class="search-icon"></i>
 					<input type="text" class="search-input" placeholder="搜索产品/供应商" @click="goSearch">
 				</div>
-				<router-link class="to-back" to="/"></router-link>
+				<a class="to-back" @click="goBack"></a>
 			</header>
 			<div class="kinds-con">
 				<ul class="kinds">
@@ -30,3 +30,4 @@
 	</div>
 </template>
 <script src="../js/category.js"></script>
+<style scoped src="../css/category.css"></style>

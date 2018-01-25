@@ -108,6 +108,9 @@ export default{
 		},
 		beforeDelete(){//点击删除图标
 			this.isHide = false;
+		},
+		goBack(){
+			this.$router.back()
 		}
 	},
 }

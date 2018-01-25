@@ -35,16 +35,16 @@
 					</router-link>
 				</li>
 				<li class="kinds-item">
-					<a href="#" class="kinds-link">
+					<router-link to="/find/4" class="kinds-link">
 						<i><img src="../assets/image/icon-buy.png" alt=""></i>
 						<p>一键求购</p>
-					</a>
+					</router-link>
 				</li>
 				<li class="kinds-item">
-					<a href="#" class="kinds-link">
+					<router-link to="/find/4" class="kinds-link">
 						<i><img src="../assets/image/icon-mineBuy.png" alt=""></i>
 						<p>我的求购</p>
-					</a>
+					</router-link>
 				</li>
 			</ul>
 			<!--分类-->
@@ -139,7 +139,7 @@
 				</ul>
 				<ul class="rec-item-list" v-if="isCom">
 					<li class="rec-item" v-for="item in recCompany">
-						<a href="" class="clearfix">
+						<router-link :to="{name:'companyHome',params: {id:item.comid}}" class="clearfix">
 							<i class="rec-img"><img v-lazy="item.logo" alt=""></i>
 							<div class="rec-con">
 								<p class="rec-con-title ellipsis" v-text="item.companyname"></p>
@@ -159,7 +159,7 @@
 									<span class="cert-status2">实地验厂</span>
 								</div>
 							</div>
-						</a>
+						</router-link>
 					</li>
 				</ul>
 			</div>
@@ -175,7 +175,7 @@
 					</a>
 				</li>
 				<li class="foot-menu-item">
-					<router-link to="/find">
+					<router-link to="/find/2">
 						<i class="foot-icon find-icon"></i>
 						<p class="foot-w">发现</p>
 					</router-link>
@@ -197,3 +197,4 @@
 	</div>
 </template>
 <script src="../js/wk-index.js"></script>
+<style scoped src="../css/wk-index.css"></style>

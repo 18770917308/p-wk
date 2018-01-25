@@ -3,7 +3,7 @@
 		<div class="sample-wrapper">
 			<header class="sample-top">
 				<p>样品中心</p>
-				<router-link class="to-back" to="/"></router-link>
+				<a class="to-back" @click="goBack"></a>
 			</header>
 			<ul class="sample-list">
 				<li v-for="item in sample"> 
@@ -28,3 +28,4 @@
 	</div>
 </template>
 <script src="../js/samplecenter.js"></script>
+<style scoped src="../css/samplecenter.css"></style>

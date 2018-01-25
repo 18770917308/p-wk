@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import { swiper, swiperSlide} from 'vue-awesome-swiper'
+import axios from 'axios'
 import isEnd from '@/components/common/isEnd'
 var vmData = {
 			indexObj1:[],
@@ -107,7 +108,13 @@ export default {
 					}else{
 						//console.log("请求出错！")
 					}
-			},
+			},/*
+		getAdv_c(){
+			var self = this;
+			axios.post(self.baseUrl+'Buyer/v2/index/index/').then(function(response){
+				console.log(response);
+			})
+		},*/
 		recProd(){//请求推荐产品
 				var self=this,
 					url = 'Buyer/v2/index/recommend/',

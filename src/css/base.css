@@ -3,10 +3,9 @@ html{font: 10px/1 "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细�
 a{color: #666;text-decoration: none;}
 body{background: #f3f3f3;}
 ul, li{
-	margin: 0;
-    padding: 0;
     list-style-type: none;
 }
+*{margin: 0;padding: 0;}
 body{background: #f3f3f3;}
 .wrapper{
 	background: #f3f3f3;
