@@ -37,7 +37,7 @@ export default{
 					buyid:self.$route.params.id
 				},
 				response = self.ajaxCommon(url,data).responseJSON;
-				console.log('response',response);
+				//console.log('response',response);
 				if(response.status==1){
 					self.buyDetail = response.result;
 				}else{

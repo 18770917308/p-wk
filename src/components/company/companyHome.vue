@@ -8,7 +8,7 @@
 				<a class="to-back" @click="goBack"></a>
 				<i class="share-icon"></i>
 		</header>
-		<div class="company-top" :style="{background:products.background}">
+		<div class="company-top">
 			<div class="company-top-con clearfix">
 				<div class="company-inf">
 					<i class="company-logo"><img v-lazy="products.logo" alt=""></i>

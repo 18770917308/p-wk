@@ -19,20 +19,20 @@ export default{
 	},
 	methods:{
 		ajaxCommon(url,datas) { //ajax通用
-			var baseUrl = this.baseUrl;
-			return $.ajax({
-					type:'POST',
-					url:baseUrl+url,
-					async: false,
-					dataType:'json',
-					data:datas||'',
-					success:function(response){
-						//console.log(response);
-					},
-					error:function(){
-						//console.log("获取数据失败");
-					}
-				})
+		var baseUrl = this.baseUrl;
+		return $.ajax({
+				type:'POST',
+				url:baseUrl+url,
+				async: false,
+				dataType:'json',
+				data:datas||'',
+				success:function(response){
+					//console.log(response);
+				},
+				error:function(){
+					//console.log("获取数据失败");
+				}
+			})
 		},
 		getCompanyProduct(){//获取公司的产品列表
 			var self =this,

@@ -119,23 +119,23 @@ export default {
 			})
 		},*/
 		recProd(){//请求推荐产品
-				var self=this,
-					url = 'Buyer/v2/index/recommend/',
-					data={page:self.productPage},
-					response=self.ajaxCommon(url,data).responseJSON;
-					//console.log('推荐产品：',response);
-					if(response.status==1){
-						if(response.pages==self.productPage){
-							self.isLoadingMore=false;
-							self.isPageEnd1 = true;
-						}
-						for(var item in response.result){
-							self.recPro.push(item);
-						}
-						self.recPro=response.result;
-					}else{
-						//console.log("请求出错！")
+			var self=this,
+				url = 'Buyer/v2/index/recommend/',
+				data={page:self.productPage},
+				response=self.ajaxCommon(url,data).responseJSON;
+				//console.log('推荐产品：',response);
+				if(response.status==1){
+					if(response.pages==self.productPage){
+						self.isLoadingMore=false;
+						self.isPageEnd1 = true;
 					}
+					for(var item in response.result){
+						self.recPro.push(item);
+					}
+					self.recPro=response.result;
+				}else{
+					//console.log("请求出错！")
+				}
 		},
 		recComp(){//请求推荐企业
 			var self=this,

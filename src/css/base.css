@@ -134,6 +134,13 @@ header{
 	background-size: 10px;
 	margin: -7px 0
 }
+.rec-con-main{
+	font-size: 13px;
+	margin: 6% 0 0 0;
+}
+.rec-con-major{
+	color: #999;
+}
 footer{
 	position: fixed;
 	width: 100%;

@@ -15,6 +15,18 @@ export default{
 		self.type = 1;
 		self.getData();
 	},
+	mounted(){
+		var map = new AMap.Map('comMap', {
+				    resizeEnable: true,
+				    zoom:11,
+				    center: [this.comData.lng, this.comData.lat]        
+				});
+		var	marker = new AMap.Marker({
+			position: [this.comData.lng, this.comData.lat],
+			title: this.comData.companyname
+			    });
+			marker.setMap(map);
+	},
 	methods:{
 		ajaxCommon(url,datas) { //ajax通用
 			var baseUrl = this.baseUrl;
@@ -34,7 +46,7 @@ export default{
 		},
 		getData(){
 			var self = this,
-				url='index.php/Buyer/Checkcompany/info/',
+				url='Buyer/v2/checkcompany/info/',
 				data = {
 					type:self.type,
 					comid:self.$route.params.id

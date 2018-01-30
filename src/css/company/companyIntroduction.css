@@ -124,6 +124,7 @@
 	height: 200px;
 	background: #fff;
 	position: relative;
+	overflow: hidden;
 }
 .see-map{
 	font-size: 14px;
@@ -134,7 +135,9 @@
 	left: 0;
 	width: 100%;
 	box-sizing: border-box;
+	z-index: 161;
 }
+#comMap{height: 200px;}
 .see-map span{
 	display: block;
 	background: rgba(250,219,71,.7);
@@ -196,7 +199,7 @@
     width: 100%;
     max-width: 640px;
     min-width: 320px;
-    z-index: 22;
+    z-index: 222;
 }
 .companyHome-foot a{
 	width: 50%;

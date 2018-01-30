@@ -45,9 +45,6 @@ export default{
 			var self= this;
 			self.catid = id;
 		},
-		toBack(){
-			this.$router.go(-1);
-		},
 		goSearch(){//跳转至搜索
 			this.$router.push({path:'/search'});
 		},

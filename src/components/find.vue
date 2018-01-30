@@ -1,6 +1,6 @@
 <template>
 	<div class="find">
-		<!--头部-->
+			<!--头部-->
 		<header class="find-header">
 			<p class="h-title">发现</p>
 			<a class="scan-icon" href="javascipt:void(0)" @click="showDia"></a>
@@ -42,6 +42,29 @@
 				</li>
 			</ul>
 		</div>
+		<ul class="nearby-company" v-if="findModule==3">
+			<li class="nearby-company-item" v-for="item in nearbyCom">
+				<router-link :to="{name:'companyHome',params: {id:item.com_id}}" class="clearfix">
+					<i class="nearby-company-logo"><img v-lazy="item.logo" alt=""></i>
+					<div class="nearby-company-content">
+						<p class="nearby-company-title ellipsis" v-text="item.companyname"></p>
+						<p class="nearby-company-addr ellipsis" v-text="item.areaname">广州市天河区</p>
+						<div>
+							<span v-if="item.pattern==1" class="company-type company-type3">品牌商</span>
+							<span v-if="item.pattern==2" class="company-type company-type3">服务商</span>
+							<span v-if="item.pattern==3" class="company-type company-type2">制造商</span>
+							<span v-if="item.mfrs_level==1" class="company-level company-level1"></span>
+							<span v-if="item.mfrs_level==2" class="company-level company-level2"></span>
+							<span v-if="item.mfrs_level==3" class="company-level company-level3"></span>
+						</div>
+						<div class="nearby-company-map clearfix">
+							<span class="nearby-company-distance">{{item.distance}}m</span>
+							<a href="javascipt:void(0)" class="nearby-nav-btn" @click.stop="showDia">导航</a>
+						</div>
+					</div>
+				</router-link>
+			</li>
+		</ul>
 		<!--求购中心-->
 		<div class="buy-list" v-if="findModule==4">
 			<router-link :to="{name:'buyDetail',params: {id:item.buyid}}" class="buy-item" v-for="item in buyData">
@@ -86,6 +109,7 @@
 					</a>
 				</li>
 			</ul>
+			<div id="c_map" style="width:0;height:0"></div>
 		</footer>
 		<!--弹窗组件-->
 		<dialogue modal-title="请下载APP以获得更多体验" ok-btn="我要下载" cancel-btn="我再想想" v-on:cancel="hideDialogue" v-on:sureOpt="downAPP" v-if="isShowDia"></dialogue>

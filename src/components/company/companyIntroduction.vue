@@ -13,27 +13,32 @@
 		</div>
 		<div v-if="type==1">
 			<div class="com-inf-top clearfix">
-				<i class="com-log"><img src="../../assets/image/recommend.png" alt=""></i>
+				<i class="com-log"><img :src="comData.logo" alt=""></i>
 				<div class="com-content">
 					<p class="com-name" v-text="comData.companyname"></p>
-					<span class="company-type company-type2">制造商</span>
-					<span class="company-level company-level2"></span>
+					<span v-if="comData.pattern==1" class="company-type company-type3">品牌商</span>
+					<span v-if="comData.pattern==2" class="company-type company-type3">服务商</span>
+					<span v-if="comData.pattern==3" class="company-type company-type2">制造商</span>
+					<span v-if="comData.mfrs_level==1" class="company-level company-level1"></span>
+					<span v-if="comData.mfrs_level==2" class="company-level company-level2"></span>
+					<span v-if="comData.mfrs_level==3" class="company-level company-level3"></span>
 				</div>
 			</div>
 			<p class="inf-title">基本信息</p>
 			<ul clas=inf-list>
-				<li class="inf-item">企业类型：&nbsp;&nbsp;&nbsp;<span class="veri-f">制造商</span></li>
-				<li class="inf-item">主营品类：&nbsp;&nbsp;&nbsp;<span class="veri-f">OEM/ODM</span></li>
-				<li class="inf-item">企业电话：&nbsp;&nbsp;&nbsp;<span class="veri-f">12457888</span></li>
-				<li class="inf-item">所在地区：&nbsp;&nbsp;&nbsp;<span class="veri-f">广东省 广州市</span></li>
-				<li class="inf-item">企业地址：&nbsp;&nbsp;&nbsp;<span class="veri-f">中山大道123号</span></li>
+				<li class="inf-item">企业类型：&nbsp;&nbsp;&nbsp;<span class="veri-f" v-text="comData.pattern_name"></span></li>
+				<li class="inf-item">主营品类：&nbsp;&nbsp;&nbsp;<span class="veri-f" v-text="comData.catname">OEM/ODM</span></li>
+				<li class="inf-item">企业电话：&nbsp;&nbsp;&nbsp;<span class="veri-f" v-text="comData.company_phone">12457888</span></li>
+				<li class="inf-item">所在地区：&nbsp;&nbsp;&nbsp;<span class="veri-f" v-text="comData.areaname">广东省 广州市</span></li>
+				<li class="inf-item">企业地址：&nbsp;&nbsp;&nbsp;<span class="veri-f" v-text="comData.address">中山大道123号</span></li>
 			</ul>
 			<p class="inf-title">企业位置</p>
 			<div class="inf-map">
 				<div class="see-map"><span>查看完整地图</span></div>
+				<div id="comMap"></div>
 			</div>
 			<p class="inf-con-title">企业简介<i class="down-icon" :class="[isShowContent?'active':'']" @click="downContent"></i></p>
-			<div class="inf-con" v-if="isShowContent">企业简介企业简介企业简介企业简介企业简介企业简介企业简介企业简介</div>
+			<div class="inf-con" v-show="isShowContent" v-text="comData.introduce">企业简介企业简介企业简介企业简介企业简介企业简介企业简介企业简介</div>
 		</div>
 		<div v-if="type==2">
 			<ul class="com-veri-top">
@@ -73,7 +78,7 @@
 			</ul>
 		</div>
 		<footer class="companyHome-foot">
-			<a href="" class="go-introduce">企业主页</a>
+			<router-link :to='{name:"companyHome",params:{id:$route.params.id}}' class="go-introduce">企业主页</router-link>
 			<a href="" class="link-introduce">联系商谈</a>
 		</footer>
 	</div>

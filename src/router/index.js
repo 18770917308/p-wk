@@ -90,7 +90,7 @@ export default new Router({
       component:newsDetail
     },
     {
-      name:'buyDetail',
+      name:'buyDetail',//求购详情
       path:'/buyDetail/:id',
       component:buyDetail
     }

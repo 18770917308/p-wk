@@ -163,3 +163,101 @@
 	background: url('../assets/image/buy-sprite.png') 0 0 no-repeat;
 	background-size: 15px;
 }
+/*附近企业*/
+.nearby-company-item{
+	margin-top: 20px;
+	background: #fff;
+}
+.nearby-company-item>a{
+	display: block;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.nearby-company-logo{
+	float: left;
+	width: 28%;
+	min-width: 70px;
+	min-height: 70px;
+}
+.nearby-company-logo img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.nearby-company-content{
+	width: 72%;
+	float: left;
+	box-sizing: border-box;
+	padding-left: 10px;
+	text-align: left;
+}
+.nearby-company-title{
+	font-size: 14px;
+	color: #333;
+	margin: 5px 0;
+}
+.nearby-company-addr{
+	font-size: 13px;
+	color: #999;
+	padding: 7px 20px;
+	background: url('../assets/image/icon-address.png') left center no-repeat;
+	background-size: 15px;
+}
+.nearby-company-distance{
+	float: left;
+	height: 17px;
+	padding: 0 10px;
+	line-height: 19px;
+	font-size: 14px;
+	color: #fc5757;
+	border-radius: 8px;
+	line-height: 17px;
+	border:1px solid #fd5757;
+	position: relative;
+	top: 5px;
+}
+.nearby-nav-btn{
+	float: right;
+	font-size: 14px;
+	color: #333;border-radius: 5px;
+	background: #fccf00;
+	padding: 8px 20px;
+}
+.nearby-company-map{
+	margin: 4px 0;
+}
+.company-type,.company-level{
+	height: 20px;
+	display: inline-block;
+	font-size: 10px;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+.company-type{
+	color: #fccf00;
+	line-height: 20px;
+	padding:0 2px 0 20px;
+	border-radius: 4px;
+	border:1px solid #fccf00;
+	margin-right: 10px;
+}
+.company-level{width: 60px;}
+.company-type2{
+	background: url('../assets/image/com-type3.png') left center no-repeat;
+	background-size: 19px;
+}
+.company-type3{
+	background: url('../assets/image/com-type.png') left center no-repeat;
+	background-size: 19px;
+}
+.company-level3{
+	background: url('../assets/image/com-strength3.png') no-repeat;
+	background-size: 60px;
+}
+.company-level2{
+	background: url('../assets/image/com-strength2.png') no-repeat;
+	background-size: 60px;
+}
+.company-level1{
+	background: url('../assets/image/com-strength1.png') no-repeat;
+	background-size: 60px;
+}

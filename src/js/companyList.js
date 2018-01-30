@@ -76,7 +76,7 @@ export default{
 				if(!that.isPageEnd){
 					that.currPage+=1;
 					//console.log('请求的下一页:',that.currPage);
-					that.getCompanyList(that.type);
+					that.getCompanyList(that.searchType);
 				}
 					
 			}
