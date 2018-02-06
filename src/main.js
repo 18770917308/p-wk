@@ -15,13 +15,29 @@ Vue.use(vueLazyLoad,{
 	attempt:1,
 })
 Vue.use(VueAwesomeSwiper)
+//判断设备类型
+var deviceUa = navigator.userAgent.toLowerCase(); 
+var device;
+if (/iphone|ipad|ipod/.test(deviceUa)) {
+      device = "iphone";
+} else if(/android/.test(deviceUa)) {
+      device = "android";
+}
+//
 Vue.prototype.baseUrl= 'http://apis.wkmill.com:8066/';
-
+Vue.prototype.device = device;
 Vue.config.productionTip = false
 
 //路由跳转后自动回到顶部
 router.afterEach((to,from,next) => {
     window.scrollTo(0,0);
+    if(to.name=="companyHome" && from.name){
+    	window.location.reload();
+    }
+    $(".bdsharebuttonbox").css({
+        "zIndex":"-1",
+        "visibility":"hidden"
+      });
 });
 new Vue({
   el: '#app',

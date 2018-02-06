@@ -24,6 +24,9 @@
 				<p>求购中心</p>
 			</li>
 		</ul>
+		<div v-if="findModule==1">
+			<p class="no-like">暂无推荐</p>
+		</div>
 		<!--微库头条-->
 		<div v-if="findModule==2">
 			<div class="z-essay"><p>微库征文</p></div>
@@ -97,13 +100,13 @@
 					</router-link>
 				</li>
 				<li class="foot-menu-item">
-					<a href="">
+					<a href="javascipt:void(0)" @click="showDia">
 						<i class="foot-icon contact-icon"></i>
 						<p class="foot-w">商谈</p>
 					</a>
 				</li>
 				<li class="foot-menu-item">
-					<a href="">
+					<a href="javascipt:void(0)">
 						<i class="foot-icon account-icon"></i>
 						<p class="foot-w">账号</p>
 					</a>

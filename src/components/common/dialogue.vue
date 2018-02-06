@@ -1,16 +1,17 @@
 <template>
 	<!--弹窗组件-->
-	<div class="mask">
-		<div class="dialogue">
+	<div class="mask" @click="cancelDialogue()">
+		<div class="dialogue" @click.stop=''>
 			<p class="dialogue-title">{{modalTitle}}</p>
-			<div class="dialogue-btn">
+			<div class="dialogue-btn" v-if="diaType=='normal'">
 				<span class="dialogue-cancel" @click="cancelDialogue()">{{cancelBtn}}</span>
 				<span class="dialogue-define" @click="okDialogue()">{{okBtn}}</span>
 			</div>
+			<div class="dialogue-btn" v-if="diaType=='alert'"  @click="okDialogue()"><span>确认</span></div>
 		</div>
 	</div>
 </template>
-<style type="text/css">
+<style type="text/css" scoped>
 	/*弹窗遮罩*/
 	.mask{
 		position: fixed;
@@ -45,6 +46,8 @@
 	    display: -webkit-flex;
 	    display: -ms-flexbox;
 	    display: flex;
+	    text-align: center;
+	    line-height: 35px;
 	}
 	.dialogue-btn span{
 		width: 50%;
@@ -74,6 +77,11 @@
 			cancelBtn:{
 				type:String,
 				default:"取消"
+			},
+			diaType:{
+				type:String,
+				default:'normal'//normal:为带‘确认’和‘取消’按钮 alert:为只有一个确定按钮，提示作用，点击则隐藏弹窗
+								//该字段可自定义多种 视情况而定
 			}
 		},
 		methods:{

@@ -181,13 +181,13 @@
 					</router-link>
 				</li>
 				<li class="foot-menu-item">
-					<a href="">
+					<a href="javascipt:void(0)" @click="showDia">
 						<i class="foot-icon contact-icon"></i>
 						<p class="foot-w">商谈</p>
 					</a>
 				</li>
 				<li class="foot-menu-item">
-					<a href="">
+					<a href="javascipt:void(0)" @click="showDia">
 						<i class="foot-icon account-icon"></i>
 						<p class="foot-w">账号</p>
 					</a>

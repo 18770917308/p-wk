@@ -1,14 +1,14 @@
 <template>
-	<div class="newsDetail">
+	<div class="newsDetail" @click="hideShare">
 		<!--头部-->
 		<header class="newsDetail-header">
 			<p class="h-title">资讯详情</p>
 			<a class="to-back" @click="goBack"></a>
-			<a class="share-icon" href="javascipt:void(0)"></a>
+			<a class="share-icon" @click.stop="goShare" href="javascipt:void(0)"></a>
 		</header>
 		<div class="newsDetail-content" v-html="newsDetail">
 			
-		</div>
+		</div><!-- 
 		<div>
 			<p class="recommend-line">为您推荐</p>
 		</div>
@@ -23,7 +23,9 @@
 					</div>
 				</router-link>
 			</li>
-		</ul>
+		</ul> -->
+		<!--分享-->
+		<share @click.stop=""></share>
 	</div>
 </template>
 <script src="../js/newsDetail.js"></script>

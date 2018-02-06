@@ -261,3 +261,9 @@
 	background: url('../assets/image/com-strength1.png') no-repeat;
 	background-size: 60px;
 }
+/**/
+.no-like{
+	font-size: 15px;
+	color: #666;
+	line-height: 400px;
+}

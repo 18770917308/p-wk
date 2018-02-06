@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import { swiper, swiperSlide} from 'vue-awesome-swiper'
 import dialogue from '@/components/common/dialogue'
+import share from '@/components/common/share'
 var vmData = {
 	productDetail:{},
 	pH5:'',
@@ -41,11 +42,36 @@ export default{
 				self.isPlaying = false;
 			};
 		}
+		let _this = this;
+		//分享
+		setTimeout(function(){
+			
+        	window._bd_share_config = {
+                "common":{
+                "bdSnsKey":{},
+				"bdText":_this.productDetail.title,
+				"bdDesc":_this.productDetail.title,
+				"bdMini":"2",
+				"bdPic":_this.productDetail.logo,
+				"bdStyle":"0",
+				"bdUrl":"https://cn.vuejs.org/v2/guide/class-and-style.html",//分享的链接
+				"bdSize":"32"},
+				"share":{}
+            };
+            $("#app script").remove();
+            const s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5);
+            document.getElementById("app").appendChild(s)
+		},200)
+            
+        	
 	},
 	components:{
 		swiper,
 		swiperSlide,
-		dialogue
+		dialogue,
+		share
 	},
 	methods:{
 		ajaxCommon(url,datas){//ajax通用
@@ -128,6 +154,18 @@ export default{
 		},
 		downAPP(){//点击确定 下载APP 需判断设备类型 Android or iOS
 			this.isShowDia =false;
+		},
+		goShare(){
+			$(".bdsharebuttonbox").css({
+				"zIndex":"223",
+				"visibility":"visible"
+			});
+		},
+		hideShare(){
+			$(".bdsharebuttonbox").css({
+				"zIndex":"-1",
+				"visibility":"hidden"
+			});
 		}
 	}
 }

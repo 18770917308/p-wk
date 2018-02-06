@@ -57,6 +57,9 @@ export default{
 		        self.lng = data.position.getLng();
 		        self.lat = data.position.getLat();
 		        self.city = data.addressComponent.city;
+		        console.log('city',data.addressComponent.city);
+		        console.log('lng',data.position.getLng());
+		        console.log('lat',data.addressComponent.city);
 		    }); //返回定位信息
 		    AMap.event.addListener(geolocation, 'error', function(data) {
 		        if (data.info == 'FAILED') {
@@ -147,7 +150,7 @@ export default{
 				url = 'index.php/buyer/nearby/index',
 				data={address:self.city},
 				response = self.ajaxCommon(url,data).responseJSON;
-				console.log(response);
+				//console.log(response);
 			if(response.status == 1){
 				self.nearbyCom = response.result;
 				for(var i = 0;i<response.result.length;i++){

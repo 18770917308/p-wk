@@ -1,6 +1,8 @@
 import $ from 'jquery'
+import share from '@/components/common/share'
 var vmData = {
-	newsDetail:''
+	newsDetail:'',
+	isShare:false,
 };
 export default{
 	name:'newsDetail',
@@ -9,6 +11,31 @@ export default{
 	},
 	created:function(){
 		this.getNewsDetail();
+	},
+	components:{
+		share
+	},
+	mounted(){
+		let _this = this;
+		let content = $(".container h3").text();
+        this.$nextTick(function () {
+            window._bd_share_config = {
+                "common":{
+                "bdSnsKey":{},
+				"bdText":content,
+				"bdDesc":content,
+				"bdMini":"2",
+				"bdPic":'',
+				"bdStyle":"0",
+				"bdUrl":"https://cn.vuejs.org/v2/guide/class-and-style.html",//分享的链接
+				"bdSize":"32"},
+				"share":{}
+            };
+            const s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5);
+            document.body.appendChild(s);
+        })
 	},
 	methods:{
 		ajaxCommon(url,datas) { //ajax通用
@@ -39,6 +66,18 @@ export default{
 		},
 		goBack(){
 			this.$router.back()
+		},
+		goShare(){
+			$(".bdsharebuttonbox").css({
+				"zIndex":"223",
+				"visibility":"visible"
+			});
+		},
+		hideShare(){
+			$(".bdsharebuttonbox").css({
+				"zIndex":"-1",
+				"visibility":"hidden"
+			});
 		}
 	}
 }

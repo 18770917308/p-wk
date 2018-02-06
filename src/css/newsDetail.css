@@ -6,17 +6,6 @@
 	height: 46px;
 	border-bottom: 1px solid #d2d2d2;
 }
-.share-icon{
-	display: block;
-	width: 40px;
-	height: 30px;
-	position: absolute;
-	top: 50%;
-	right: 0;
-	margin: -15px 0;
-	background: url('../assets/image/icon-share.png') center no-repeat;
-	background-size: 20px;
-}
 .newsDetail-content{
 	padding: 17px;
 	font-size: 14px;

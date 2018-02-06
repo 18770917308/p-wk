@@ -32,7 +32,7 @@
 			</li>
 		</ul>
 		<div class="products-2 clearfix" v-if="viewType">
-			<router-link :to="{name:'productDetail',params: {id:productid}}" class="products2-link" v-for="item in products">
+			<router-link :to="{name:'productDetail',params: {id:item.productid}}" class="products2-link" v-for="item in products">
 				<i class="products2-img"><img v-lazy="item.thumb" alt=""></i>
 				<p class="products2-title ellipsis" v-text="item.title"></p>
 				<div class="products2-bottom clearfix">

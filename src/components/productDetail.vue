@@ -1,12 +1,12 @@
 <template>
-	<div class="productDetail">
+	<div class="productDetail" @click="hideShare">
 		<header class="normal-header">
 				<div class="search-wrap">
 					<span class=" product-module" :class='{active:!isH5}' @click="changeView(1)">产品</span>
 					<span class="detail-module" :class='{active:isH5}' @click="changeView(2)">详情</span>
 				</div>
 				<a class="to-back" @click="goBack"></a>
-				<i class="share-icon"></i>
+				<i class="share-icon" @click.stop="goShare"></i>
 		</header>
 		<div v-if="!isH5">
 			<div class="product-slides">
@@ -102,7 +102,10 @@
 		<div class="showH5" v-html="pH5" v-if="isH5"></div>
 		<!--弹窗组件-->
 		<dialogue modal-title="请下载APP以获得更多体验" ok-btn="我要下载" cancel-btn="我再想想" v-on:cancel="hideDialogue" v-on:sureOpt="downAPP" v-if="isShowDia"></dialogue>
+		<!--分享-->
+		<share @click.stop=""></share>
 	</div>
 </template>
 <script src="../js/productDetail.js"></script>
 <style scoped src="../css/productDetail.css"></style>
+
