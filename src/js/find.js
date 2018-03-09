@@ -10,7 +10,7 @@ var vmData = {
 	isPageEnd2:false,//求购尾页
 	findModule:2,//发现的模块 1猜你喜欢 2微库头条 3附近企业  4求购中心
 	isShowDia:false,
-	nearbyCom:'',
+	nearbyCom:[],
 	lng:'',//定位的经度 用于计算两地之间距离
 	lat:'',//定位的纬度
 	city:'',//定位的当前城市
@@ -38,7 +38,7 @@ export default{
     		var geolocation = new AMap.Geolocation({
     			enableHighAccuracy: true,//是否使用高精度定位，默认:true
 		        timeout: 10000,          //超过10秒后停止定位，默认：无穷大
-		        maximumAge: 0,           //定位结果缓存0毫秒，默认：0
+		        maximumAge: 10000,           //定位结果缓存0毫秒，默认：0
 		        convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
 		        showButton: true,        //显示定位按钮，默认：true
 		        buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
@@ -57,9 +57,6 @@ export default{
 		        self.lng = data.position.getLng();
 		        self.lat = data.position.getLat();
 		        self.city = data.addressComponent.city;
-		        console.log('city',data.addressComponent.city);
-		        console.log('lng',data.position.getLng());
-		        console.log('lat',data.addressComponent.city);
 		    }); //返回定位信息
 		    AMap.event.addListener(geolocation, 'error', function(data) {
 		        if (data.info == 'FAILED') {
@@ -163,9 +160,21 @@ export default{
 			self.findModule = type;
 			switch(type){
 				case 1: self.getLikeData();break;
-				case 2: self.getNewsData();break;
-				case 3: self.getComData();break;
-				case 4: self.getBuyData();break;
+				case 2:
+					if(!self.news.length){
+						self.getNewsData();
+					}
+					break;
+				case 3: 
+					if(!self.nearbyCom.length){
+						self.getComData();
+					}
+				break;
+				case 4: 
+					if(!self.buyData.length){
+						self.getBuyData();
+					}
+				break;
 				default:alert("error");
 			}
 		},

@@ -22,6 +22,8 @@ var vmData = {
 	      			}
 	      			
 	      	},
+	isPlaying:false,//video是否正在播放
+	hasVideo:false,
 };
 export default{
 	name:'companyHome',
@@ -35,9 +37,12 @@ export default{
 		share
 	},
 	created:function(){
-		this.type = 3;
-		this.getCompanyProduct(1);
-		this.getComInf();
+		var self = this;
+		self.hasVideo = false;
+		self.type = 3;
+		self.getCompanyProduct(1);
+		self.getComInf();
+		self.isPlaying=false;
 	},
 	computed: {
 		swiper() {
@@ -99,7 +104,7 @@ export default{
             s.type = 'text/javascript';
             s.src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5);
             document.body.appendChild(s);
-        })
+        });
 	},
 	methods:{
 		ajaxCommon(url,datas) { //ajax通用
@@ -146,9 +151,50 @@ export default{
 				response = self.ajaxCommon(url,data).responseJSON;
 				if(response.status == 1){
 					self.comInf = response.result;
+					//self.comInf.com_interview = 'http://localhost:8080/src/assets/image/test.mp4'
+					if(self.comInf.com_interview && self.comInf.com_interview!=" "){
+						self.hasVideo = true;
+					}
 				}else{
 					console.log("请求出错")
 				}
+				console.log(self.hasVideo);
+			if(self.hasVideo){
+				setTimeout(this.previewVideo,20)//视频video获取首帧图片 延时至dom渲染完成
+			}
+		},
+		previewVideo(){//获取视频首帧图片 该方法只适用于与项目同一域的视频文件
+			var video, output;  
+	        var scale = 1;  
+	        var initialize = function() {  
+	            output = document.getElementById("vf-img");  
+	            video = document.getElementById("cVideo");  
+	            video.addEventListener('loadeddata',captureImage);  
+	        };  
+	        var captureImage = function() {  
+	            var canvas = document.createElement("canvas"); 
+	            var width =  $('#cVideo').css('width').replace('px','');
+	            var height = $('#cVideo').css('height').replace('px','')
+	            canvas.width = width;  
+	            canvas.height = height;  
+	            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);  
+	  
+	            var img = document.createElement("img");  
+	            img.src = canvas.toDataURL("image/png");
+	            output.appendChild(img);  
+	        };
+	        initialize(); 
+		},
+		playVideo(){
+			var $myVideo = $("#cVideo").get(0),
+				self = this;
+			console.log(self.isPlaying);
+			if(self.isPlaying){
+				$myVideo.pause();
+			}else{
+				$myVideo.play();
+			}
+			self.isPlaying = !self.isPlaying;
 		},
 		formatDate(str){//日期格式化
 			var date = new Date(),

@@ -32,6 +32,7 @@ Vue.config.productionTip = false
 router.afterEach((to,from,next) => {
     window.scrollTo(0,0);
     if(to.name=="companyHome" && from.name){
+      console.log("别处跳转至公司主页");
     	window.location.reload();
     }
     $(".bdsharebuttonbox").css({

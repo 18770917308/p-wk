@@ -8,7 +8,7 @@
 				<a class="to-back" href="javascript:void(0)" @click="goBack"></a>
 				<i class="share-icon" @click.stop="goShare"></i>
 		</header>
-		<div class="company-top">
+		<div class="company-top" :style="{background:comInf.background}">
 			<div class="company-top-con clearfix">
 				<div class="company-inf">
 					<i class="company-logo"><img v-lazy="comInf.logo" alt=""></i>
@@ -45,9 +45,23 @@
 					</div>
 				</router-link>
 			</li>
+			<li v-if="!products.product_list.length"><p class="tips">暂无产品</p></li>
 		</ul>
 		<ul class="company-products" :class="{activeHide:type!=2}">
-			<li class="company-products-item" v-for="item in products.product_list">
+			<li class="company-products-item" v-for="item in products.product_list" v-if="item">
+				<router-link :to="{name:'productDetail',params:{id:item.productid}}" class="company-products-link clearfix">
+					<i class="company-products-img"><img v-lazy="item.thumb" alt=""></i>
+					<div class="company-products-con">
+						<p class="company-products-title" v-text="item.title"></p>
+						<a class="company-products-sign prod-exam" v-if="item.sampling_method==1">免费取样</a>
+						<a class="company-products-sign prod-exam" v-if="item.sampling_method==2">收费取样</a>
+						<a class="company-products-sign prod-exam" v-if="item.sampling_method==''">没有样品</a>
+						<p class="company-products-main company-products-price">{{item.price}}/{{item.units}}</p>
+					</div>
+				</router-link>
+			</li>
+			<li v-if="!products.product_list.length"><p class="tips">暂无新品</p></li>
+			<!-- <li class="company-products-item" v-for="item in products.product_list">
 				<p v-text="item.inputtime" class="new_product_time"></p>
 				<router-link v-for="items in item.list_data" :to="{name:'productDetail',params:{id:items.productid}}" class="company-products-link clearfix">
 					<i class="company-products-img"><img v-lazy="items.thumb" alt=""></i>
@@ -58,24 +72,28 @@
 						<p class="company-products-main company-products-price">{{items.price}}<span v-if="items.price!='面议'">/{{items.units}}</span></p>
 					</div>
 				</router-link>
-			</li>
+			</li> -->
 		</ul>
 		<div class="company-hall" :class="{activeHide:type!=3}">
 			<p class="hall-title">企业全景</p>
-			<div class="hall-content">
-				<img class="panoramic-img" :src="comInf.view_thumb" alt="" v-if="comInf.view_thumb">
+			<a :href="comInf.view_url" class="hall-content" v-if="comInf.view_thumb">
+				<img class="panoramic-img" :src="comInf.view_thumb" alt="">
 				<i class="icon-panoramic" v-if="comInf.view_thumb"><img src="../../assets/image/icon-panoramic.png" alt=""></i>
-				<img class="panoramic-img" v-if="!comInf.view_thumb" src="../../assets/image/no-panoramic-b.png" alt="">
+			</a>
+			<div class="hall-content" v-if="!comInf.view_thumb">
+				<img class="panoramic-img" src="../../assets/image/no-panoramic-b.png" alt="">
 			</div>
 			<p class="hall-title">企业专访</p>
-			<div class="hall-content">
-				<video src="" width=100% style="background:#d1d1d1;"></video>
-				<i class="video-btn icon-play"><img src="../../assets/image/b-play.png" alt=""></i>
+			<div class="hall-content" @click="playVideo" v-if="hasVideo">
+				<video :src="comInf.com_interview" width=100% style="background:#d1d1d1;" id="cVideo" controls="controls"></video>
+				<i class="video-btn icon-play" v-if="!isPlaying"><img src="../../assets/image/b-play.png" alt=""></i>
 				<i class="video-btn icon-play" v-if="false"><img src="../../assets/image/b-stop.png" alt=""></i>
+				<div id="vf-img" v-if="!isPlaying"></div>
 			</div>
+			<div v-if="!hasVideo" class="hall-content"><p>暂无视频</p></div>
 			<p class="hall-title">精品推荐</p>
 			<div class="swiper-box">
-				<swiper :options="c_swiperOption" ref="mySwiper1" :class>
+				<swiper :options="c_swiperOption" ref="mySwiper1" :class v-if="comInf.product_list.length">
 		          <swiper-slide v-for="item in comInf.product_list">
 		            <router-link :to='{name:"productDetail",params:{id:item.id}}' class="recommend-item">
 		            	<i class="recommend-img"><img :src="item.thumb" alt=""></i>
@@ -83,7 +101,7 @@
 		            </router-link>
 		          </swiper-slide>
 				</swiper>
-				<ul class="no-recommend-ul" v-if="false"><!--无推荐产品时-->
+				<ul class="no-recommend-ul" v-if="!comInf.product_list.length"><!--无推荐产品时-->
 					<li class="no-recommend-1"></li>
 					<li class="no-recommend-2"><p class="re-tips"><img src="../../assets/image/no-recommend.png" alt="">&nbsp;暂无产品</p></li>
 					<li class="no-recommend-3"></li>

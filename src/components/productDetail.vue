@@ -1,5 +1,5 @@
 <template>
-	<div class="productDetail" @click="hideShare">
+	<div class="productDetail" @click="hideShare" v-if="productDetail">
 		<header class="normal-header">
 				<div class="search-wrap">
 					<span class=" product-module" :class='{active:!isH5}' @click="changeView(1)">产品</span>

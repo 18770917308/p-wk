@@ -27,6 +27,7 @@ export default{
 	},
 	created:function(){
 		var self = this;
+		self.productDetail = {},
 		self.isH5 = false;
 		self.hasVideo = false;
 		self.getProductDetail();
@@ -42,30 +43,7 @@ export default{
 				self.isPlaying = false;
 			};
 		}
-		let _this = this;
-		//分享
-		setTimeout(function(){
-			
-        	window._bd_share_config = {
-                "common":{
-                "bdSnsKey":{},
-				"bdText":_this.productDetail.title,
-				"bdDesc":_this.productDetail.title,
-				"bdMini":"2",
-				"bdPic":_this.productDetail.logo,
-				"bdStyle":"0",
-				"bdUrl":"https://cn.vuejs.org/v2/guide/class-and-style.html",//分享的链接
-				"bdSize":"32"},
-				"share":{}
-            };
-            $("#app script").remove();
-            const s = document.createElement('script');
-            s.type = 'text/javascript';
-            s.src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5);
-            document.getElementById("app").appendChild(s)
-		},200)
-            
-        	
+		this.shareInit();
 	},
 	components:{
 		swiper,
@@ -123,6 +101,27 @@ export default{
 				console.log("H5",response);
 				self.pH5 = response.responseText;
 				
+		},
+		//分享
+		shareInit(){
+			var _this = this;
+			window._bd_share_config = {
+                "common":{
+                "bdSnsKey":{},
+				"bdText":_this.productDetail.title,
+				"bdDesc":_this.productDetail.title,
+				"bdMini":"2",
+				"bdPic":_this.productDetail.logo,
+				"bdStyle":"0",
+				"bdUrl":"https://cn.vuejs.org/v2/guide/class-and-style.html",//分享的链接
+				"bdSize":"32"},
+				"share":{}
+            };
+            $("#app script").remove();
+            const s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5);
+            document.getElementById("app").appendChild(s);
 		},
 		changeView(type){//详情&产品 切换
 			if(type==1){

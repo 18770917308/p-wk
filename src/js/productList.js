@@ -22,6 +22,8 @@ export default{
 		var self =this;
 		self.products = [];
 		self.keyword = '';
+		self.currPage = 1;
+		self.isPageEnd = false;
 		if(this.$route.params.keyword !="" && this.$route.params.keyword !="null"){
 			self.keyword=this.$route.params.keyword;
 		};
